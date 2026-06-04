@@ -1,0 +1,46 @@
+---
+name: University of Lausanne
+description: University of Lausanne public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/university-of-lausanne/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 2
+    summary: >-
+      Verified two public, documented research APIs live: the SPICA atlas JSON
+      API (projects.json returns real data) and the IRIS DSpace REST API
+      (version 1.3.8, anonymous read on public content). No public open-data
+      portal, OAI-PMH endpoint, or general developer portal was found; the
+      institutional/student APIs sit behind the my.unil.ch auth gateway and a
+      Kong gateway with no public documentation. The github.com/unil org is
+      unrelated; openscienceunil is the relevant org but hosts coursework, not
+      API specs. No endpoints were fabricated.
+    endpoints:
+      - url: https://spica.unil.ch/home/api
+        status: 200
+        note: SPICA API documentation page, live.
+      - url: https://spica.unil.ch/projects.json
+        status: 200
+        note: Returns real project JSON array.
+      - url: https://api.unil.ch/iris/server/api
+        status: 200
+        note: DSpace REST root, version 1.3.8, dspaceName IRIS.
+      - url: https://api.unil.ch/iris/server/api/core/items
+        status: 401
+        note: Items endpoint requires authentication.
+      - url: https://api.unil.ch/iris/oai/request?verb=Identify
+        status: 404
+        note: No OAI-PMH at this path; not exposed.
+      - url: https://iris.unil.ch
+        status: 200
+        note: IRIS repository UI.
+      - url: https://my.unil.ch/
+        status: 200
+        note: Authenticated portal gateway, no public API docs.
+      - url: https://github.com/openscienceunil
+        status: 200
+        note: UNIL Open Science org (coursework repos), no APIs.json specs.
+      - url: https://www.unil.ch
+        status: 200
+        note: Official institutional website.
