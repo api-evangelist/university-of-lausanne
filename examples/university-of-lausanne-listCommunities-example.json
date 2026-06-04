@@ -1,0 +1,60 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.unil.ch/iris/server/api/core/communities?size=1"
+  },
+  "response": {
+    "_embedded": {
+      "communities": [
+        {
+          "id": "b237fe8c-78b9-4bf5-9658-f03c354851b8",
+          "uuid": "b237fe8c-78b9-4bf5-9658-f03c354851b8",
+          "name": "IRIS",
+          "handle": "iris/1",
+          "metadata": {
+            "dc.identifier.uri": [
+              {
+                "value": "https://iris.unil.ch/handle/iris/1",
+                "language": null,
+                "authority": null,
+                "confidence": -1,
+                "place": 0
+              }
+            ],
+            "dc.title": [
+              {
+                "value": "IRIS",
+                "language": null,
+                "authority": null,
+                "confidence": -1,
+                "place": 0
+              }
+            ]
+          },
+          "archivedItemsCount": -1,
+          "type": "community",
+          "uniqueType": "core.community",
+          "_links": {
+            "collections": {
+              "href": "https://api.unil.ch/iris/server/api/core/communities/b237fe8c-78b9-4bf5-9658-f03c354851b8/collections"
+            },
+            "self": {
+              "href": "https://api.unil.ch/iris/server/api/core/communities/b237fe8c-78b9-4bf5-9658-f03c354851b8"
+            }
+          }
+        }
+      ]
+    },
+    "_links": {
+      "self": {
+        "href": "https://api.unil.ch/iris/server/api/core/communities?size=1"
+      }
+    },
+    "page": {
+      "size": 1,
+      "totalElements": 1,
+      "totalPages": 1,
+      "number": 0
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "unil": "https://www.unil.ch/vocab#",
+    "dc": "http://purl.org/dc/terms/",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+    "institution": {
+      "@id": "unil:institution",
+      "@type": "schema:CollegeOrUniversity"
+    },
+    "Project": {
+      "@id": "unil:Project",
+      "@type": "schema:Dataset"
+    },
+    "id": "schema:identifier",
+    "public_id": "unil:publicId",
+    "key": "unil:key",
+    "ref_id": "unil:referenceAtlasId",
+    "project_attrs": "unil:projectAttributes",
+    "nber_samples": "unil:numberOfSamples",
+    "created_at": "schema:dateCreated",
+    "updated_at": "schema:dateModified",
+    "Community": {
+      "@id": "unil:Community",
+      "@type": "schema:CreativeWorkSeries"
+    },
+    "Collection": {
+      "@id": "unil:Collection",
+      "@type": "schema:Collection"
+    },
+    "Item": {
+      "@id": "unil:Item",
+      "@type": "schema:CreativeWork"
+    },
+    "Bitstream": {
+      "@id": "unil:Bitstream",
+      "@type": "schema:MediaObject"
+    },
+    "handle": "dc:identifier",
+    "metadata": "unil:metadata",
+    "archivedItemsCount": "unil:archivedItemsCount"
+  },
+  "@type": "schema:CollegeOrUniversity",
+  "name": "University of Lausanne",
+  "url": "https://www.unil.ch",
+  "description": "Public research university in Lausanne, Switzerland (UNIL)."
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api.unil.ch/iris/structures/community.json",
+  "name": "DspaceCommunity",
+  "type": "object",
+  "description": "JSON Structure for a DSpace community in the IRIS repository.",
+  "properties": {
+    "id": { "type": "uuid", "description": "Community UUID." },
+    "uuid": { "type": "uuid", "description": "Community UUID." },
+    "name": { "type": "string", "description": "Community display name." },
+    "handle": { "type": "string", "description": "Persistent handle identifier." },
+    "metadata": {
+      "type": "map",
+      "description": "DSpace metadata map keyed by qualified field name.",
+      "values": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "value": { "type": "string" },
+            "language": { "type": ["string", "null"] },
+            "authority": { "type": ["string", "null"] },
+            "confidence": { "type": "int32" },
+            "place": { "type": "int32" }
+          },
+          "required": ["value"]
+        }
+      }
+    },
+    "archivedItemsCount": { "type": "int32", "description": "Archived item count." },
+    "type": { "type": "string", "description": "Resource type discriminator." },
+    "uniqueType": { "type": "string" }
+  },
+  "required": ["uuid", "name", "handle", "type"]
+}

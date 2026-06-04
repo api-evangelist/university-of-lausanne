@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://spica.unil.ch/structures/project.json",
+  "name": "SpicaProject",
+  "type": "object",
+  "description": "JSON Structure for a SPICA atlas project.",
+  "properties": {
+    "id": { "type": "int32", "description": "Internal project identifier." },
+    "public_id": { "type": "int32", "description": "Public-facing identifier." },
+    "key": { "type": "string", "description": "Short alphanumeric project key." },
+    "name": { "type": "string", "description": "Human-readable project name." },
+    "description": { "type": "string", "description": "Project / experiment description." },
+    "ref_id": { "type": "int32", "description": "Reference atlas identifier." },
+    "project_attrs": {
+      "type": "map",
+      "description": "Variable experimental attributes.",
+      "values": { "type": "string" }
+    },
+    "nber_samples": { "type": "int32", "description": "Number of samples." },
+    "created_at": { "type": "datetime", "description": "Creation timestamp." },
+    "updated_at": { "type": "datetime", "description": "Last update timestamp." },
+    "url": { "type": "uri", "description": "Canonical project JSON URL." }
+  },
+  "required": ["id", "name", "ref_id", "url"]
+}

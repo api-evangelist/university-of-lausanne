@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://spica.unil.ch/projects/query.json?per_page=1&page=1&free_text=melanoma"
+  },
+  "response": [
+    {
+      "id": 358,
+      "public_id": 23,
+      "key": "ynt5ce",
+      "name": "Ekiz_2019",
+      "description": "Effect of miR-155 KO in T cells from melanoma ",
+      "ref_id": 1,
+      "project_attrs": {
+        "condition": "melanoma (B16)",
+        "timepoints": "9-12 days after tumor injection"
+      },
+      "nber_samples": 2,
+      "created_at": "2021-08-13T08:56:15.939Z",
+      "updated_at": "2026-06-01T03:05:26.019Z",
+      "url": "http://spica.unil.ch/projects/358.json"
+    }
+  ]
+}

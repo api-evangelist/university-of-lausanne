@@ -1,0 +1,44 @@
+extends: [[spectral:oas, off]]
+formats:
+  - oas3
+documentationUrl: https://spica.unil.ch/home/api
+rules:
+  unil-info-contact:
+    description: API info object should declare a contact pointing back to UNIL.
+    severity: warn
+    given: $.info
+    then:
+      field: contact
+      function: truthy
+  unil-https-servers:
+    description: All servers must use HTTPS (UNIL APIs are HTTPS-only).
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: '^https://'
+  unil-operation-id:
+    description: Every operation should declare an operationId.
+    severity: warn
+    given: $.paths[*][get,post,put,patch,delete]
+    then:
+      field: operationId
+      function: truthy
+  unil-pagination-params:
+    description: >-
+      List/query operations should expose pagination parameters (SPICA uses
+      page/per_page; DSpace uses page/size).
+    severity: info
+    given: $.paths[*].get.parameters
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+  unil-json-responses:
+    description: Successful responses should be served as application/json.
+    severity: warn
+    given: $.paths[*][get].responses.200.content
+    then:
+      function: defined

@@ -40,6 +40,8 @@ apis:
     properties:
       - type: Documentation
         url: https://spica.unil.ch/home/api
+      - type: OpenAPI
+        url: openapi/university-of-lausanne-spica.yaml
   - aid: university-of-lausanne:iris
     name: IRIS Repository (DSpace REST API)
     description: >-
@@ -54,6 +56,8 @@ apis:
     properties:
       - type: Documentation
         url: https://api.unil.ch/iris/server/api
+      - type: OpenAPI
+        url: openapi/university-of-lausanne-iris.yaml
 common:
   - type: Website
     url: https://www.unil.ch

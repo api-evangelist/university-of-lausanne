@@ -1,0 +1,62 @@
+vocabulary:
+  name: University of Lausanne API Vocabulary
+  description: >-
+    Controlled vocabulary of the key terms used across the publicly documented
+    University of Lausanne (UNIL) APIs: the SPICA single-cell / spatial atlas
+    JSON API and the IRIS institutional repository DSpace REST API.
+  version: '1.0.0'
+  terms:
+    - term: Project
+      definition: >-
+        A SPICA atlas dataset describing a single-cell / spatial transcriptomics
+        experiment, with metadata, sample counts and a downloadable archive.
+      tags: [spica, research-data]
+    - term: ref_id
+      definition: >-
+        Reference atlas identifier used by SPICA to group projects belonging to
+        the same reference atlas.
+      tags: [spica, filtering]
+    - term: project_attrs
+      definition: >-
+        Variable key-value experimental attributes attached to a SPICA project
+        (e.g. condition, timepoints, tissue).
+      tags: [spica, metadata]
+    - term: free_text
+      definition: >-
+        SPICA query parameter performing a free-text search across project
+        metadata fields.
+      tags: [spica, search]
+    - term: Community
+      definition: >-
+        A top-level DSpace container in IRIS that groups collections; the root
+        community is "IRIS".
+      tags: [iris, dspace]
+    - term: Collection
+      definition: >-
+        A DSpace grouping of items within a community in the IRIS repository.
+      tags: [iris, dspace]
+    - term: Item
+      definition: >-
+        A DSpace archived record (publication, dataset, thesis) within a
+        collection in the IRIS repository.
+      tags: [iris, dspace]
+    - term: Bitstream
+      definition: >-
+        A binary file (the actual document or data) attached to a DSpace item
+        via a bundle.
+      tags: [iris, dspace]
+    - term: handle
+      definition: >-
+        Persistent Handle System identifier assigned to DSpace objects in IRIS
+        (e.g. iris/1).
+      tags: [iris, identifier]
+    - term: metadata
+      definition: >-
+        DSpace Dublin Core metadata map keyed by qualified field name (e.g.
+        dc.title, dc.identifier.uri).
+      tags: [iris, dublin-core]
+    - term: HAL
+      definition: >-
+        Hypertext Application Language hypermedia format used by the DSpace REST
+        API, exposing resource relations via _links and _embedded.
+      tags: [iris, hypermedia]

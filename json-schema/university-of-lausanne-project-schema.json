@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://spica.unil.ch/schemas/project.json",
+  "title": "SPICA Project",
+  "description": "A SPICA atlas project and its experimental metadata.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Internal project identifier."
+    },
+    "public_id": {
+      "type": "integer",
+      "description": "Public-facing project identifier."
+    },
+    "key": {
+      "type": "string",
+      "description": "Short alphanumeric project key."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable project name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the project / experiment."
+    },
+    "ref_id": {
+      "type": "integer",
+      "description": "Reference atlas identifier the project belongs to."
+    },
+    "project_attrs": {
+      "type": "object",
+      "description": "Variable key-value experimental attributes.",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "nber_samples": {
+      "type": "integer",
+      "description": "Number of samples in the project."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp (ISO 8601)."
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last update timestamp (ISO 8601)."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Canonical URL to the project JSON resource."
+    }
+  },
+  "required": ["id", "name", "ref_id", "url"]
+}
