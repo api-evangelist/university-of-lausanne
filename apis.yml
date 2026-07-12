@@ -59,6 +59,8 @@ apis:
       - type: OpenAPI
         url: openapi/university-of-lausanne-iris.yaml
 common:
+  - type: DomainSecurity
+    url: security/university-of-lausanne-domain-security.yml
   - type: Website
     url: https://www.unil.ch
   - type: GitHub
