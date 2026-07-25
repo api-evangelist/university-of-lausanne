@@ -1,0 +1,87 @@
+openapi: 3.0.3
+info:
+  title: IRIS Repository (DSpace REST API) Core Projects.json API
+  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
+  version: 1.3.8
+  contact:
+    name: University of Lausanne - IRIS
+    url: https://iris.unil.ch
+servers:
+- url: https://api.unil.ch/iris/server/api
+  description: Production DSpace REST server
+tags:
+- name: Projects.json
+paths:
+  /projects.json:
+    get:
+      operationId: listProjects
+      summary: List all projects
+      description: Returns the full list of public SPICA projects with metadata.
+      responses:
+        '200':
+          description: An array of project objects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+      tags:
+      - Projects.json
+components:
+  schemas:
+    Project:
+      type: object
+      description: A SPICA atlas project and its experimental metadata.
+      properties:
+        id:
+          type: integer
+          description: Internal project identifier.
+          example: 358
+        public_id:
+          type: integer
+          description: Public-facing project identifier.
+          example: 23
+        key:
+          type: string
+          description: Short alphanumeric project key.
+          example: ynt5ce
+        name:
+          type: string
+          description: Human-readable project name.
+          example: Ekiz_2019
+        description:
+          type: string
+          description: Description of the project / experiment.
+          example: Effect of miR-155 KO in T cells from melanoma
+        ref_id:
+          type: integer
+          description: Reference atlas identifier the project belongs to.
+          example: 1
+        project_attrs:
+          type: object
+          description: Variable key-value experimental attributes (e.g. condition, timepoints, tissue).
+          additionalProperties:
+            type: string
+          example:
+            condition: melanoma (B16)
+            timepoints: 9-12 days after tumor injection
+        nber_samples:
+          type: integer
+          description: Number of samples in the project.
+          example: 2
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp (ISO 8601).
+          example: '2021-08-13T08:56:15.939Z'
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601).
+          example: '2026-06-01T03:05:26.019Z'
+        url:
+          type: string
+          format: uri
+          description: Canonical URL to the project JSON resource.
+          example: http://spica.unil.ch/projects/358.json

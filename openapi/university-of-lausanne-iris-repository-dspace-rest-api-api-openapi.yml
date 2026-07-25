@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: IRIS Repository (DSpace REST API) Core IRIS Repository (DSpace REST API) API
+  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
+  version: 1.3.8
+  contact:
+    name: University of Lausanne - IRIS
+    url: https://iris.unil.ch
+servers:
+- url: https://api.unil.ch/iris/server/api
+  description: Production DSpace REST server
+tags:
+- name: IRIS Repository (DSpace REST API)
+paths:
+  /:
+    get:
+      operationId: getApiRoot
+      summary: API root
+      description: Returns the DSpace REST root document with version metadata and the HAL hypermedia _links catalog of available resource endpoints.
+      responses:
+        '200':
+          description: The API root document.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiRoot'
+      tags:
+      - IRIS Repository (DSpace REST API)
+components:
+  schemas:
+    ApiRoot:
+      type: object
+      description: DSpace REST root document.
+      properties:
+        dspaceUI:
+          type: string
+          example: https://iris.unil.ch
+        dspaceName:
+          type: string
+        dspaceServer:
+          type: string
+          example: https://api.unil.ch/iris/server
+        dspaceVersion:
+          type: string
+        crisVersion:
+          type: string
+        irisRole:
+          type: string
+          example: leader
+        irisVersion:
+          type: string
+          example: 1.3.8
+        type:
+          type: string
+          example: root
+        _links:
+          type: object
+          additionalProperties: true
+          description: HAL hypermedia links to available resource endpoints.
