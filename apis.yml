@@ -11,9 +11,21 @@ description: >-
   is served by a public DSpace REST API. Most institutional and student-information
   APIs sit behind the my.unil.ch authentication gateway and are not publicly documented.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Free
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/university-of-lausanne.png
 url: https://raw.githubusercontent.com/api-evangelist/university-of-lausanne/refs/heads/main/apis.yml
 tags:
   - Education
@@ -27,37 +39,64 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: university-of-lausanne:spica
-    name: SPICA Atlas API
-    description: >-
-      Public JSON API for the SPICA single-cell / spatial atlas hosted by UNIL.
-      It lists current projects with metadata, supports filtering by reference
-      atlas (ref_id), free-text search across metadata fields, pagination, and
-      download of project archives.
-    humanURL: https://spica.unil.ch/home/api
-    baseURL: https://spica.unil.ch
-    tags: [ Research Data, Single Cell, Atlas, JSON, Life Sciences ]
-    properties:
-      - type: Documentation
-        url: https://spica.unil.ch/home/api
-      - type: OpenAPI
-        url: openapi/university-of-lausanne-spica.yaml
-  - aid: university-of-lausanne:iris
-    name: IRIS Repository (DSpace REST API)
-    description: >-
-      Public DSpace 7 REST/HATEOAS API (version 1.3.8) serving the IRIS
-      institutional research repository at UNIL. Exposes communities,
-      collections, items, bundles and bitstreams, with discovery, metadata
-      schemas and ORCID integration. Anonymous read access is available for
-      public content; some endpoints require authentication.
-    humanURL: https://iris.unil.ch
-    baseURL: https://api.unil.ch/iris/server/api
-    tags: [ Institutional Repository, DSpace, Research Data, Open Access ]
-    properties:
-      - type: Documentation
-        url: https://api.unil.ch/iris/server/api
-      - type: OpenAPI
-        url: openapi/university-of-lausanne-iris.yaml
+- aid: university-of-lausanne:university-of-lausanne-core-api
+  name: University of Lausanne Core API
+  description: The Core API from University of Lausanne — 2 operation(s) for core.
+  humanURL: https://spica.unil.ch/home/api
+  baseURL: https://spica.unil.ch
+  tags:
+  - Core
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-core-api-openapi.yml
+  - type: Documentation
+    url: https://spica.unil.ch/home/api
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-iris-repository-dspace-rest-api-api
+  name: University of Lausanne IRIS Repository (DSpace REST API) API
+  description: >-
+    The IRIS Repository (DSpace REST API) API from University of Lausanne — 1 operation(s) for iris repository
+    (dspace rest api).
+  humanURL: https://spica.unil.ch/home/api
+  baseURL: https://spica.unil.ch
+  tags:
+  - IRIS Repository (DSpace REST API)
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml
+  - type: Documentation
+    url: https://spica.unil.ch/home/api
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-projects-api
+  name: University of Lausanne Projects API
+  description: The Projects API from University of Lausanne — 2 operation(s) for projects.
+  humanURL: https://spica.unil.ch/home/api
+  baseURL: https://spica.unil.ch
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-projects-api-openapi.yml
+  - type: Documentation
+    url: https://spica.unil.ch/home/api
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-projects-json-api
+  name: University of Lausanne Projects.json API
+  description: The Projects.json API from University of Lausanne — 1 operation(s) for projects.json.
+  humanURL: https://spica.unil.ch/home/api
+  baseURL: https://spica.unil.ch
+  tags:
+  - Projects.json
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-projects-json-api-openapi.yml
+  - type: Documentation
+    url: https://spica.unil.ch/home/api
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
 common:
   - type: AgenticAccess
     url: agentic-access/university-of-lausanne-agentic-access.yml
