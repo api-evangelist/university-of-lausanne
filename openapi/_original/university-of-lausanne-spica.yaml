@@ -1,0 +1,161 @@
+openapi: 3.0.3
+info:
+  title: SPICA Atlas API
+  description: >-
+    Public JSON API for the SPICA single-cell / spatial atlas hosted by the
+    University of Lausanne (UNIL). Lists current projects with metadata, supports
+    filtering by reference atlas (ref_id), free-text search across metadata
+    fields, pagination, and download of project archives. This specification was
+    reconstructed from the public documentation at https://spica.unil.ch/home/api
+    and confirmed against live responses.
+  version: '1.0.0'
+  contact:
+    name: University of Lausanne - SPICA
+    url: https://spica.unil.ch/home/api
+servers:
+  - url: https://spica.unil.ch
+    description: Production
+paths:
+  /projects.json:
+    get:
+      operationId: listProjects
+      summary: List all projects
+      description: Returns the full list of public SPICA projects with metadata.
+      responses:
+        '200':
+          description: An array of project objects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+  /projects/query.json:
+    get:
+      operationId: queryProjects
+      summary: Query projects by reference atlas or free text
+      description: >-
+        Filter projects by reference atlas (ref_id) and/or perform free-text
+        search across metadata fields, with pagination.
+      parameters:
+        - name: ref_id
+          in: query
+          required: false
+          description: Reference atlas identifier to filter projects.
+          schema:
+            type: integer
+        - name: free_text
+          in: query
+          required: false
+          description: Free-text search across project metadata fields.
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          description: Page number (1-based).
+          schema:
+            type: integer
+            default: 1
+        - name: per_page
+          in: query
+          required: false
+          description: Number of results per page.
+          schema:
+            type: integer
+            default: 1000
+      responses:
+        '200':
+          description: An array of matching project objects.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+  /projects/{project_id}/get_file:
+    get:
+      operationId: downloadProjectFile
+      summary: Download a project archive
+      description: Download a file (such as the data archive) for a given project.
+      parameters:
+        - name: project_id
+          in: path
+          required: true
+          description: The project identifier (id or key).
+          schema:
+            type: string
+        - name: type
+          in: query
+          required: false
+          description: The type of file to download (e.g. "archive").
+          schema:
+            type: string
+            example: archive
+      responses:
+        '200':
+          description: The requested file as a binary stream.
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    Project:
+      type: object
+      description: A SPICA atlas project and its experimental metadata.
+      properties:
+        id:
+          type: integer
+          description: Internal project identifier.
+          example: 358
+        public_id:
+          type: integer
+          description: Public-facing project identifier.
+          example: 23
+        key:
+          type: string
+          description: Short alphanumeric project key.
+          example: ynt5ce
+        name:
+          type: string
+          description: Human-readable project name.
+          example: Ekiz_2019
+        description:
+          type: string
+          description: Description of the project / experiment.
+          example: Effect of miR-155 KO in T cells from melanoma
+        ref_id:
+          type: integer
+          description: Reference atlas identifier the project belongs to.
+          example: 1
+        project_attrs:
+          type: object
+          description: >-
+            Variable key-value experimental attributes (e.g. condition,
+            timepoints, tissue).
+          additionalProperties:
+            type: string
+          example:
+            condition: melanoma (B16)
+            timepoints: 9-12 days after tumor injection
+        nber_samples:
+          type: integer
+          description: Number of samples in the project.
+          example: 2
+        created_at:
+          type: string
+          format: date-time
+          description: Creation timestamp (ISO 8601).
+          example: '2021-08-13T08:56:15.939Z'
+        updated_at:
+          type: string
+          format: date-time
+          description: Last update timestamp (ISO 8601).
+          example: '2026-06-01T03:05:26.019Z'
+        url:
+          type: string
+          format: uri
+          description: Canonical URL to the project JSON resource.
+          example: http://spica.unil.ch/projects/358.json

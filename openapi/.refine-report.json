@@ -1,0 +1,20 @@
+{
+  "provider": "university-of-lausanne",
+  "sources": [
+    "university-of-lausanne-core-api-openapi.yml",
+    "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml",
+    "university-of-lausanne-projects-api-openapi.yml",
+    "university-of-lausanne-projects-json-api-openapi.yml"
+  ],
+  "outputs": [
+    "university-of-lausanne-core-api-openapi.yml",
+    "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml",
+    "university-of-lausanne-projects-api-openapi.yml",
+    "university-of-lausanne-projects-json-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
