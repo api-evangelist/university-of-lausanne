@@ -1,0 +1,248 @@
+{
+  "item": [
+    {
+      "id": "58a1226c-d767-46e2-b0ad-851ccbcef7df",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d3daa97-1151-43b1-a500-2637eff04900",
+          "name": "Query projects by reference atlas or free text",
+          "request": {
+            "name": "Query projects by reference atlas or free text",
+            "description": {
+              "content": "Filter projects by reference atlas (ref_id) and/or perform free-text search across metadata fields, with pagination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                "query.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ref_id",
+                  "value": "<integer>",
+                  "description": "Reference atlas identifier to filter projects."
+                },
+                {
+                  "disabled": false,
+                  "key": "free_text",
+                  "value": "<string>",
+                  "description": "Free-text search across project metadata fields."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number (1-based)."
+                },
+                {
+                  "disabled": false,
+                  "key": "per_page",
+                  "value": "1000",
+                  "description": "Number of results per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11240719-3d1b-4328-a02b-4beafb747cbe",
+              "name": "An array of matching project objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    "query.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ref_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "free_text",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "per_page",
+                      "value": "1000"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 358,\n    \"public_id\": 23,\n    \"key\": \"ynt5ce\",\n    \"name\": \"Ekiz_2019\",\n    \"description\": \"Effect of miR-155 KO in T cells from melanoma\",\n    \"ref_id\": 1,\n    \"project_attrs\": {\n      \"condition\": \"melanoma (B16)\",\n      \"timepoints\": \"9-12 days after tumor injection\"\n    },\n    \"nber_samples\": 2,\n    \"created_at\": \"2021-08-13T08:56:15.939Z\",\n    \"updated_at\": \"2026-06-01T03:05:26.019Z\",\n    \"url\": \"http://spica.unil.ch/projects/358.json\"\n  },\n  {\n    \"id\": 358,\n    \"public_id\": 23,\n    \"key\": \"ynt5ce\",\n    \"name\": \"Ekiz_2019\",\n    \"description\": \"Effect of miR-155 KO in T cells from melanoma\",\n    \"ref_id\": 1,\n    \"project_attrs\": {\n      \"condition\": \"melanoma (B16)\",\n      \"timepoints\": \"9-12 days after tumor injection\"\n    },\n    \"nber_samples\": 2,\n    \"created_at\": \"2021-08-13T08:56:15.939Z\",\n    \"updated_at\": \"2026-06-01T03:05:26.019Z\",\n    \"url\": \"http://spica.unil.ch/projects/358.json\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "179dd5b6-14b9-4cf7-b5de-b938bc56812a",
+          "name": "Download a project archive",
+          "request": {
+            "name": "Download a project archive",
+            "description": {
+              "content": "Download a file (such as the data archive) for a given project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project_id",
+                "get_file"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "The type of file to download (e.g. \"archive\")."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project_id",
+                  "description": "(Required) The project identifier (id or key)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ec1ffb8-b141-4805-b7a8-d8edffb12286",
+              "name": "The requested file as a binary stream.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project_id",
+                    "get_file"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "archive"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project_id",
+                      "description": "(Required) The project identifier (id or key)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.unil.ch/iris/server/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "df4e4f04-4c12-46ee-b555-d28ab33fe787",
+    "name": "IRIS Repository (DSpace REST API) Core Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.\n\nContact Support:\n Name: University of Lausanne - IRIS",
+      "type": "text/plain"
+    }
+  }
+}

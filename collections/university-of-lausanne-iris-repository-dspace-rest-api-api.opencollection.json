@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IRIS Repository (DSpace REST API) Core IRIS Repository (DSpace REST API) API",
+    "version": "1.3.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "IRIS Repository (DSpace REST API)",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "API root",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/"
+          },
+          "docs": "Returns the DSpace REST root document with version metadata and the HAL hypermedia _links catalog of available resource endpoints."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

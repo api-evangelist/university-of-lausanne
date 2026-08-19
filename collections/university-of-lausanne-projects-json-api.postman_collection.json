@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "5bbfdb3a-2c45-4e5f-be64-78fbedd4d81c",
+      "name": "Projects.json",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3149fcdd-40b9-4077-bd69-b148a80f46d1",
+          "name": "List all projects",
+          "request": {
+            "name": "List all projects",
+            "description": {
+              "content": "Returns the full list of public SPICA projects with metadata.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects.json"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bd6ba6b8-f87f-42bd-a195-7ac8e81d53c4",
+              "name": "An array of project objects.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects.json"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 358,\n    \"public_id\": 23,\n    \"key\": \"ynt5ce\",\n    \"name\": \"Ekiz_2019\",\n    \"description\": \"Effect of miR-155 KO in T cells from melanoma\",\n    \"ref_id\": 1,\n    \"project_attrs\": {\n      \"condition\": \"melanoma (B16)\",\n      \"timepoints\": \"9-12 days after tumor injection\"\n    },\n    \"nber_samples\": 2,\n    \"created_at\": \"2021-08-13T08:56:15.939Z\",\n    \"updated_at\": \"2026-06-01T03:05:26.019Z\",\n    \"url\": \"http://spica.unil.ch/projects/358.json\"\n  },\n  {\n    \"id\": 358,\n    \"public_id\": 23,\n    \"key\": \"ynt5ce\",\n    \"name\": \"Ekiz_2019\",\n    \"description\": \"Effect of miR-155 KO in T cells from melanoma\",\n    \"ref_id\": 1,\n    \"project_attrs\": {\n      \"condition\": \"melanoma (B16)\",\n      \"timepoints\": \"9-12 days after tumor injection\"\n    },\n    \"nber_samples\": 2,\n    \"created_at\": \"2021-08-13T08:56:15.939Z\",\n    \"updated_at\": \"2026-06-01T03:05:26.019Z\",\n    \"url\": \"http://spica.unil.ch/projects/358.json\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.unil.ch/iris/server/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d045805f-ccbe-4a15-b681-008ee25838c0",
+    "name": "IRIS Repository (DSpace REST API) Core Projects.json API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.\n\nContact Support:\n Name: University of Lausanne - IRIS",
+      "type": "text/plain"
+    }
+  }
+}

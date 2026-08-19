@@ -1,0 +1,102 @@
+{
+  "item": [
+    {
+      "id": "51460570-ff92-4b38-8145-131d2cf0b386",
+      "name": "IRIS Repository (DSpace REST API)",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9815f3e7-042c-4bbc-8512-642af28447db",
+          "name": "API root",
+          "request": {
+            "name": "API root",
+            "description": {
+              "content": "Returns the DSpace REST root document with version metadata and the HAL hypermedia _links catalog of available resource endpoints.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2a86140c-7069-487b-8845-695bd09007c1",
+              "name": "The API root document.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"dspaceUI\": \"https://iris.unil.ch\",\n  \"dspaceName\": \"string\",\n  \"dspaceServer\": \"https://api.unil.ch/iris/server\",\n  \"dspaceVersion\": \"string\",\n  \"crisVersion\": \"string\",\n  \"irisRole\": \"leader\",\n  \"irisVersion\": \"1.3.8\",\n  \"type\": \"root\",\n  \"_links\": {\n    \"key_0\": true,\n    \"key_1\": 3261.3280735663675\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.unil.ch/iris/server/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "db1441c6-3867-4e08-ad37-3adadaabd091",
+    "name": "IRIS Repository (DSpace REST API) Core IRIS Repository (DSpace REST API) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.\n\nContact Support:\n Name: University of Lausanne - IRIS",
+      "type": "text/plain"
+    }
+  }
+}

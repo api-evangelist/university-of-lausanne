@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IRIS Repository (DSpace REST API) Core API",
+    "version": "1.3.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Core",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List top-level communities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/core/communities",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page index."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Number of elements per page."
+              }
+            ]
+          },
+          "docs": "Returns a paginated HAL collection of communities in the repository."
+        },
+        {
+          "info": {
+            "name": "Get a community by UUID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/core/communities/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a community by UUID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

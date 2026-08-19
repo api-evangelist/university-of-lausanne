@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IRIS Repository (DSpace REST API) Core Projects.json API",
+    "version": "1.3.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects.json",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all projects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/projects.json"
+          },
+          "docs": "Returns the full list of public SPICA projects with metadata."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

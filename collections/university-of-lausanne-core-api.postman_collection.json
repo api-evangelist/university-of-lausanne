@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "c4e1898d-2e07-4a6d-820a-b56973e3796e",
+      "name": "Core",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e6e7d539-5a57-45a6-8646-1bc766f4adec",
+          "name": "List top-level communities",
+          "request": {
+            "name": "List top-level communities",
+            "description": {
+              "content": "Returns a paginated HAL collection of communities in the repository.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "communities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "Zero-based page index."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "20",
+                  "description": "Number of elements per page."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e28f4706-9896-42ae-b8d7-5101a3c45d4a",
+              "name": "A paginated collection of communities.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "communities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"_embedded\": {\n    \"communities\": [\n      {\n        \"id\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n        \"uuid\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n        \"name\": \"IRIS\",\n        \"handle\": \"iris/1\",\n        \"metadata\": {\n          \"dc.title\": [\n            {\n              \"value\": \"IRIS\",\n              \"language\": null,\n              \"authority\": null,\n              \"confidence\": -1,\n              \"place\": 0\n            }\n          ],\n          \"dc.identifier.uri\": [\n            {\n              \"value\": \"https://iris.unil.ch/handle/iris/1\",\n              \"language\": null,\n              \"authority\": null,\n              \"confidence\": -1,\n              \"place\": 0\n            }\n          ]\n        },\n        \"archivedItemsCount\": 7428,\n        \"type\": \"community\",\n        \"uniqueType\": \"string\",\n        \"_links\": {\n          \"key_0\": true,\n          \"key_1\": \"string\"\n        }\n      },\n      {\n        \"id\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n        \"uuid\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n        \"name\": \"IRIS\",\n        \"handle\": \"iris/1\",\n        \"metadata\": {\n          \"dc.title\": [\n            {\n              \"value\": \"IRIS\",\n              \"language\": null,\n              \"authority\": null,\n              \"confidence\": -1,\n              \"place\": 0\n            }\n          ],\n          \"dc.identifier.uri\": [\n            {\n              \"value\": \"https://iris.unil.ch/handle/iris/1\",\n              \"language\": null,\n              \"authority\": null,\n              \"confidence\": -1,\n              \"place\": 0\n            }\n          ]\n        },\n        \"archivedItemsCount\": 3563,\n        \"type\": \"community\",\n        \"uniqueType\": \"string\",\n        \"_links\": {\n          \"key_0\": true,\n          \"key_1\": \"string\"\n        }\n      }\n    ]\n  },\n  \"_links\": {\n    \"key_0\": 3878,\n    \"key_1\": 585.4727986634311\n  },\n  \"page\": {\n    \"size\": 7141,\n    \"totalElements\": 7152,\n    \"totalPages\": 1073,\n    \"number\": 9348\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bcfd4edb-4d43-419b-b757-f2200e5e2556",
+          "name": "Get a community by UUID",
+          "request": {
+            "name": "Get a community by UUID",
+            "description": {},
+            "url": {
+              "path": [
+                "core",
+                "communities",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "472663a0-c6b9-4d57-a27d-2d1862cc4f52",
+              "name": "A single community.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "communities",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n  \"uuid\": \"b237fe8c-78b9-4bf5-9658-f03c354851b8\",\n  \"name\": \"IRIS\",\n  \"handle\": \"iris/1\",\n  \"metadata\": {\n    \"key_0\": [\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 8766,\n        \"place\": 7024\n      },\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 8013,\n        \"place\": 658\n      }\n    ],\n    \"key_1\": [\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 3221,\n        \"place\": 8573\n      },\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 5968,\n        \"place\": 1639\n      }\n    ],\n    \"key_2\": [\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 2272,\n        \"place\": 1779\n      },\n      {\n        \"value\": \"string\",\n        \"language\": \"string\",\n        \"authority\": \"string\",\n        \"confidence\": 360,\n        \"place\": 961\n      }\n    ]\n  },\n  \"archivedItemsCount\": 6217,\n  \"type\": \"community\",\n  \"uniqueType\": \"string\",\n  \"_links\": {\n    \"key_0\": 9069.620126894908,\n    \"key_1\": true\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ad4d37e1-6c13-46ec-9d5c-929b1f08558c",
+              "name": "Community not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "communities",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.unil.ch/iris/server/api",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e97929a2-d208-4549-b1de-9ff56e342146",
+    "name": "IRIS Repository (DSpace REST API) Core API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.\n\nContact Support:\n Name: University of Lausanne - IRIS",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "IRIS Repository (DSpace REST API) Core Projects API",
+    "version": "1.3.8"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Projects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query projects by reference atlas or free text",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/projects/query.json",
+            "params": [
+              {
+                "name": "ref_id",
+                "value": "",
+                "type": "query",
+                "description": "Reference atlas identifier to filter projects."
+              },
+              {
+                "name": "free_text",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search across project metadata fields."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number (1-based)."
+              },
+              {
+                "name": "per_page",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              }
+            ]
+          },
+          "docs": "Filter projects by reference atlas (ref_id) and/or perform free-text search across metadata fields, with pagination."
+        },
+        {
+          "info": {
+            "name": "Download a project archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.unil.ch/iris/server/api/projects/:project_id/get_file",
+            "params": [
+              {
+                "name": "project_id",
+                "value": "",
+                "type": "path",
+                "description": "The project identifier (id or key)."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of file to download (e.g. \"archive\")."
+              }
+            ]
+          },
+          "docs": "Download a file (such as the data archive) for a given project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
