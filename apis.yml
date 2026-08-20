@@ -75,6 +75,8 @@ apis:
   humanURL: https://spica.unil.ch/home/api
   baseURL: https://spica.unil.ch
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
