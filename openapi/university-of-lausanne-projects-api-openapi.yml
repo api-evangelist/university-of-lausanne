@@ -1,14 +1,14 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: IRIS Repository (DSpace REST API) Core Projects API
-  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
-  version: 1.3.8
+  title: SPICA Atlas Projects API
+  description: Public JSON API for the SPICA single-cell / spatial atlas hosted by the University of Lausanne (UNIL). Lists current projects with metadata, supports filtering by reference atlas (ref_id), free-text search across metadata fields, pagination, and download of project archives. This specification was reconstructed from the public documentation at https://spica.unil.ch/home/api and confirmed against live responses.
+  version: 1.0.0
   contact:
-    name: University of Lausanne - IRIS
-    url: https://iris.unil.ch
+    name: University of Lausanne - SPICA
+    url: https://spica.unil.ch/home/api
 servers:
-- url: https://api.unil.ch/iris/server/api
-  description: Production DSpace REST server
+- url: https://spica.unil.ch
+  description: Production
 tags:
 - name: Projects
 paths:

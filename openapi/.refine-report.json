@@ -1,10 +1,8 @@
 {
   "provider": "university-of-lausanne",
   "sources": [
-    "university-of-lausanne-core-api-openapi.yml",
-    "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml",
-    "university-of-lausanne-projects-api-openapi.yml",
-    "university-of-lausanne-projects-json-api-openapi.yml"
+    "_original/university-of-lausanne-iris.yaml",
+    "_original/university-of-lausanne-spica.yaml"
   ],
   "outputs": [
     "university-of-lausanne-core-api-openapi.yml",
@@ -15,6 +13,25 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "university-of-lausanne-iris.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "university-of-lausanne-iris.yaml: tagged paths GET / -> IRIS Repository (DSpace REST API)",
+    "university-of-lausanne-iris.yaml: tagged paths GET /core/communities -> Core",
+    "university-of-lausanne-iris.yaml: tagged paths GET /core/communities/{uuid} -> Core",
+    "university-of-lausanne-iris.yaml: declared missing tag: Core",
+    "university-of-lausanne-iris.yaml: declared missing tag: IRIS Repository (DSpace REST API)",
+    "university-of-lausanne-spica.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "university-of-lausanne-spica.yaml: tagged paths GET /projects.json -> Projects.json",
+    "university-of-lausanne-spica.yaml: tagged paths GET /projects/query.json -> Projects",
+    "university-of-lausanne-spica.yaml: tagged paths GET /projects/{project_id}/get_file -> Projects",
+    "university-of-lausanne-spica.yaml: declared missing tag: Projects",
+    "university-of-lausanne-spica.yaml: declared missing tag: Projects.json"
+  ],
+  "skipped": [
+    "university-of-lausanne-core-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-lausanne-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-lausanne-projects-json-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

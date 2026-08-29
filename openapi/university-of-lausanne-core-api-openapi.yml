@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: IRIS Repository (DSpace REST API) Core API
   description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
@@ -52,7 +52,40 @@ paths:
       tags:
       - Core
 components:
+  parameters:
+    size:
+      name: size
+      in: query
+      required: false
+      description: Number of elements per page.
+      schema:
+        type: integer
+        default: 20
+    page:
+      name: page
+      in: query
+      required: false
+      description: Zero-based page index.
+      schema:
+        type: integer
+        default: 0
   schemas:
+    CommunityPage:
+      type: object
+      description: A paginated HAL collection of communities.
+      properties:
+        _embedded:
+          type: object
+          properties:
+            communities:
+              type: array
+              items:
+                $ref: '#/components/schemas/Community'
+        _links:
+          type: object
+          additionalProperties: true
+        page:
+          $ref: '#/components/schemas/PageInfo'
     PageInfo:
       type: object
       description: Spring Data HAL pagination metadata.
@@ -96,33 +129,19 @@ components:
           type: object
           additionalProperties: true
           description: HAL links (collections, logo, subcommunities, parentCommunity, adminGroup, self).
-    CommunityPage:
-      type: object
-      description: A paginated HAL collection of communities.
-      properties:
-        _embedded:
-          type: object
-          properties:
-            communities:
-              type: array
-              items:
-                $ref: '#/components/schemas/Community'
-        _links:
-          type: object
-          additionalProperties: true
-        page:
-          $ref: '#/components/schemas/PageInfo'
     MetadataValue:
       type: object
       properties:
         value:
           type: string
         language:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         authority:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         confidence:
           type: integer
         place:
@@ -147,20 +166,3 @@ components:
           authority: null
           confidence: -1
           place: 0
-  parameters:
-    size:
-      name: size
-      in: query
-      required: false
-      description: Number of elements per page.
-      schema:
-        type: integer
-        default: 20
-    page:
-      name: page
-      in: query
-      required: false
-      description: Zero-based page index.
-      schema:
-        type: integer
-        default: 0
