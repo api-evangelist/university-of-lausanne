@@ -1,40 +1,54 @@
 ---
 aid: university-of-lausanne
 name: University of Lausanne
+x-type: university
+x-category: Public Research University
 description: >-
   The University of Lausanne (UNIL) is a public research university in Lausanne,
-  Switzerland, ranked #224 in the QS World University Rankings 2025. With roughly
-  17,000 students across seven faculties, UNIL maintains an Open Science strategy
-  and a Kong-based internal API gateway underpinning its digital services. Its
-  public developer footprint is modest and research-oriented: the SPICA single-cell
-  spatial atlas exposes a documented JSON API, and the IRIS institutional repository
-  is served by a public DSpace REST API. Most institutional and student-information
-  APIs sit behind the my.unil.ch authentication gateway and are not publicly documented.
+  Switzerland, founded in 1537, with roughly 17,000 students across seven faculties
+  and ROR identifier https://ror.org/019whta54. UNIL publishes no developer portal,
+  no API key programme, no API terms and no changelog, and no central catalogue of
+  its own interfaces exists — but unlike most of this cohort its small programmable
+  footprint is genuinely its own rather than a vendor's contract wearing its name.
+  Three surfaces answer anonymously on UNIL's own registrable domain: the SPICA
+  single-cell / spatial atlas JSON API at spica.unil.ch; the IRIS institutional
+  research repository's DSpace-CRIS REST API at api.unil.ch/iris/server/api, behind
+  a Kong gateway, with 253,799 indexed objects reachable through Discovery search
+  while /core/items and /core/bitstreams answer 401; and two anonymous OAI-PMH 2.0
+  harvesting contexts on the same host, one of them declaring OpenAIRE Guidelines
+  for CRIS Managers v1.1. Beyond the contracts, UNIL operates its own Shibboleth
+  identity provider (entityID https://aai.unil.ch/idp/shibboleth, scope unil.ch)
+  registered in SWITCHaai and exported to eduGAIN, and holds a DataCite repository
+  registration minting DOIs under prefix 10.48657. Everything else — student
+  information, timetables, course registration — sits behind the my.unil.ch SSO
+  gateway and is not documented as an API anywhere. No OpenAPI, AsyncAPI or MCP
+  server is published by UNIL itself; every contract in this repository was written
+  by API Evangelist from live probes and is marked as such.
 type: Index
 deliveryModel:
   model: saas
   open_source: false
-  commercial: true
+  commercial: false
   callable_host: true
   label: Hosted service · you call their endpoint
   confidence: high
   source:
   - openapi
-  - pricing
-  generated: '2026-08-28'
+  generated: '2026-09-01'
   method: derived
 accessModel:
   pricing: free
-  onboarding: unknown
+  onboarding: none
   trial: false
   try_now: false
-  public: false
-  label: Free
-  confidence: medium
+  public: true
+  label: Free · anonymous open read, no registration
+  confidence: high
   source:
   - plans
-  generated: '2026-07-22'
-  method: derived
+  - probed
+  generated: '2026-09-01'
+  method: probed
 position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/university-of-lausanne.png
@@ -47,43 +61,42 @@ tags:
   - Open Science
   - Research Data
   - Institutional Repository
+  - Research Repository
+  - Identity Federation
+  - OAI-PMH
+  - Course Catalog
+  - Research Computing
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 specificationVersion: '0.23'
 apis:
-- aid: university-of-lausanne:university-of-lausanne-core-api
-  name: University of Lausanne Core API
-  description: The Core API from University of Lausanne — 2 operation(s) for core.
-  humanURL: https://spica.unil.ch/home/api
-  baseURL: https://spica.unil.ch
-  tags:
-  - Core
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-lausanne-core-api-openapi.yml
-  - type: Documentation
-    url: https://spica.unil.ch/home/api
-  - type: Documentation
-    url: https://api.unil.ch/iris/server/api
-- aid: university-of-lausanne:university-of-lausanne-iris-repository-dspace-rest-api-api
-  name: University of Lausanne IRIS Repository (DSpace REST API) API
+- aid: university-of-lausanne:university-of-lausanne-projects-json-api
+  name: SPICA Atlas Projects.json API
+  x-operator: institution
   description: >-
-    The IRIS Repository (DSpace REST API) API from University of Lausanne — 1 operation(s) for iris repository
-    (dspace rest api).
+    The SPICA single-cell / spatial atlas project listing, on UNIL's own host
+    spica.unil.ch. Anonymous open read, confirmed 200 on 2026-09-01. SPICA is
+    UNIL-built and UNIL-run; the host, the application and the data are all the
+    institution's, which makes it the clearest institution-operated contract in
+    this repository. The OpenAPI was reconstructed by API Evangelist from
+    https://spica.unil.ch/home/api and confirmed against live responses — UNIL
+    publishes no machine-readable contract of its own.
   humanURL: https://spica.unil.ch/home/api
   baseURL: https://spica.unil.ch
   tags:
-  - IRIS Repository (DSpace REST API)
+  - Projects.json
   properties:
   - type: OpenAPI
-    url: openapi/university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml
+    url: openapi/university-of-lausanne-projects-json-api-openapi.yml
   - type: Documentation
     url: https://spica.unil.ch/home/api
-  - type: Documentation
-    url: https://api.unil.ch/iris/server/api
 - aid: university-of-lausanne:university-of-lausanne-projects-api
-  name: University of Lausanne Projects API
-  description: The Projects API from University of Lausanne — 2 operation(s) for projects.
+  name: SPICA Atlas Projects API
+  x-operator: institution
+  description: >-
+    SPICA project query and archive download on UNIL's own host: filter by
+    reference atlas (ref_id), free-text search across metadata and paginate.
+    /projects/query.json confirmed 200 anonymously on 2026-09-01.
   humanURL: https://spica.unil.ch/home/api
   baseURL: https://spica.unil.ch
   tags:
@@ -95,35 +108,208 @@ apis:
     url: openapi/university-of-lausanne-projects-api-openapi.yml
   - type: Documentation
     url: https://spica.unil.ch/home/api
-  - type: Documentation
-    url: https://api.unil.ch/iris/server/api
-- aid: university-of-lausanne:university-of-lausanne-projects-json-api
-  name: University of Lausanne Projects.json API
-  description: The Projects.json API from University of Lausanne — 1 operation(s) for projects.json.
-  humanURL: https://spica.unil.ch/home/api
-  baseURL: https://spica.unil.ch
+- aid: university-of-lausanne:university-of-lausanne-core-api
+  name: IRIS Repository Core API (DSpace REST)
+  x-operator: institution
+  description: >-
+    Community and collection resources of IRIS, UNIL's institutional research
+    information system and open-access repository, served from UNIL's own host
+    api.unil.ch behind a Kong gateway. /core/communities and /core/collections
+    both confirmed anonymous 200 on 2026-09-01. The software is DSpace-CRIS/IRIS
+    and the REST contract shape is DSpace's, so no vendor spec is imported here —
+    what is saved is UNIL's own deployment, reconstructed from live responses
+    against UNIL's host. iris@unil.ch is the declared administrative contact.
+  humanURL: https://iris.unil.ch
+  baseURL: https://api.unil.ch/iris/server/api
   tags:
-  - Projects.json
+  - Core
   properties:
   - type: OpenAPI
-    url: openapi/university-of-lausanne-projects-json-api-openapi.yml
-  - type: Documentation
-    url: https://spica.unil.ch/home/api
+    url: openapi/university-of-lausanne-core-api-openapi.yml
   - type: Documentation
     url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-discover-api
+  name: IRIS Repository Discover API (DSpace Discovery)
+  x-operator: institution
+  description: >-
+    DSpace Discovery search across everything indexed in IRIS. Confirmed
+    anonymous 200 on 2026-09-01, reporting a last page of 253,798 at size=1,
+    i.e. 253,799 indexed objects. This matters because /core/items and
+    /core/bitstreams both answer 401 to an anonymous client, so Discovery is
+    the only callable route to item-level metadata over REST.
+  humanURL: https://iris.unil.ch
+  baseURL: https://api.unil.ch/iris/server/api
+  tags:
+  - Discover
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-discover-api-openapi.yml
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-iris-repository-dspace-rest-api-api
+  name: IRIS Repository API root (DSpace REST)
+  x-operator: institution
+  description: >-
+    The IRIS DSpace REST root document, exposing version metadata and a HAL
+    hypermedia catalogue of 92 link relations. On 2026-09-01 it reported
+    irisVersion 1.3.13 and irisRole "follower" — drifted from the 1.3.8 /
+    "leader" observed on 2026-06-03, announced nowhere. dspaceVersion and
+    crisVersion both report the literal string "/", so the underlying DSpace
+    version is undisclosed.
+  humanURL: https://iris.unil.ch
+  baseURL: https://api.unil.ch/iris/server/api
+  tags:
+  - IRIS Repository (DSpace REST API)
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml
+  - type: Documentation
+    url: https://api.unil.ch/iris/server/api
+- aid: university-of-lausanne:university-of-lausanne-oai-pmh-api
+  name: IRIS OAI-PMH
+  x-operator: institution
+  description: >-
+    OAI-PMH 2.0 metadata harvesting for IRIS, on UNIL's own host. Two contexts
+    answer anonymously: /oai/request (11 metadata prefixes — oai_dc, qdc, dim,
+    mods, marc, rdf, ore, mets, didl, etdms, uketd_dc — with community and
+    collection sets) and /oai/openairecris, which declares OpenAIRE Guidelines
+    for CRIS Managers v1.1 compatibility. Identify reports repositoryName
+    "IRIS (follower)", repositoryIdentifier iris.unil.ch, adminEmail
+    iris@unil.ch and earliestDatestamp 2025-05-19T06:21:03Z. This is the
+    institution's strongest standards-conformant machine surface after its IdP,
+    and it satisfies the education regime's oai-pmh standard.
+  humanURL: https://iris.unil.ch
+  baseURL: https://api.unil.ch/iris/server/oai/request
+  tags:
+  - OAI-PMH
+  properties:
+  - type: OpenAPI
+    url: openapi/university-of-lausanne-oai-pmh-api-openapi.yml
+  - type: Documentation
+    url: https://www.unil.ch/ci/dcsr
+- aid: university-of-lausanne:unil-shibboleth-idp
+  name: UNIL Shibboleth Identity Provider (SAML 2.0 metadata)
+  x-operator: federation
+  description: >-
+    UNIL's own Shibboleth identity provider, entityID
+    https://aai.unil.ch/idp/shibboleth, carrying an IDPSSODescriptor with
+    OrganizationName "unil.ch", OrganizationDisplayName "Université de Lausanne"
+    and a shibmd:Scope of unil.ch. Registered in the SWITCHaai federation and
+    exported to eduGAIN (confirmed present in mds.edugain.org/edugain-v2.xml on
+    2026-09-01). 145 distinct unil.ch entityIDs are registered in the same
+    aggregate, including a second SAML entity at
+    http://sts.unil.ch/adfs/services/trust and a Keycloak realm at
+    bix.unil.ch/keycloak/realms/edu_id. Recorded as federation rather than
+    discarded as a shared host: the entityID, the scope, the organisation and
+    the identities are UNIL's, while the SSO endpoints run on SWITCH's edu-ID
+    platform at unil.login.eduid.ch. Note that aai.unil.ch has no public A
+    record — the entityID is a URI, not a fetchable host — and SWITCH runs no
+    per-entity MDQ service, so the metadata is readable only from the published
+    aggregates. This is not a developer API and there is no client registration.
+  humanURL: https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/authentification-aai.html
+  baseURL: https://metadata.aai.switch.ch/metadata.switchaai+idp.xml
+  tags:
+  - Identity Federation
+  - SAML
+  - Shibboleth
+  properties:
+  - type: Metadata
+    url: https://metadata.aai.switch.ch/metadata.switchaai+idp.xml
+  - type: Example
+    url: examples/university-of-lausanne-shibboleth-idp-metadata-example.xml
+  - type: Documentation
+    url: https://wiki.unil.ch/ci/books/authentification-edu-id
+- aid: university-of-lausanne:datacite-repository-registration
+  name: DataCite repository registration (UNIL data service)
+  x-operator: registry
+  description: >-
+    UNIL's membership of the DataCite DOI registry, not DataCite's contract.
+    api.datacite.org/clients?query=unil returns client PWKB.PGDJAM, name
+    "Old DOIs Unil", clientType repository, created 2025-12-12, administered
+    under consortium organisation PWKB (FORS — Swiss Centre of Expertise in the
+    Social Sciences, https://ror.org/00weppy16). DOIs minted under it carry
+    prefix 10.48657 and publisher "UNIL data service" (for example
+    10.48657/mc4b-0958, 10.48657/3499-cq82). Recorded as a fact about the
+    institution; the registry's own specification belongs to DataCite's repo,
+    never to UNIL's.
+  humanURL: https://commons.datacite.org/repositories/pwkb.pgdjam
+  baseURL: https://api.datacite.org
+  tags:
+  - DataCite
+  - DOI
+  - Research Data
+  properties:
+  - type: Registration
+    url: https://api.datacite.org/clients/pwkb.pgdjam
+  - type: Example
+    url: examples/university-of-lausanne-datacite-client-example.json
+- aid: university-of-lausanne:ror-registration
+  name: ROR organisation registration
+  x-operator: registry
+  description: >-
+    UNIL's entry in the Research Organization Registry, https://ror.org/019whta54,
+    established 1537, domain unil.ch, cross-walked to Fundref 501100006390, GRID
+    grid.9851.5, ISNI 0000 0001 2165 4204 and Wikidata Q658975. A membership, not
+    a contract: the ROR API is ROR's.
+  humanURL: https://ror.org/019whta54
+  baseURL: https://api.ror.org
+  tags:
+  - ROR
+  - Identifiers
+  properties:
+  - type: Registration
+    url: https://api.ror.org/organizations/https://ror.org/019whta54
 common:
+  - type: Website
+    url: https://www.unil.ch
+  - type: Documentation
+    url: https://spica.unil.ch/home/api
+  - type: APIReference
+    url: https://api.unil.ch/iris/server/api
+  - type: GitHubOrganization
+    url: https://github.com/openscienceunil
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/university-of-lausanne/
+  - type: Blog
+    url: https://news.unil.ch/
+  - type: PrivacyPolicy
+    url: https://www.unil.ch/unil/en/home/termes/conditions/protection-des-donnees.html
+  - type: TermsOfService
+    url: https://www.unil.ch/unil/en/home/termes/conditions/informations-legales.html
+  - type: Support
+    url: https://www.unil.ch/ci/en/home/menuinst/catalogue-de-services/support-et-formation/help-desk.html
+  - type: SecurityTxt
+    url: https://www.unil.ch/.well-known/security.txt
+  - type: SignIn
+    url: https://my.unil.ch/
+  - type: IdentityFederation
+    url: https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/authentification-aai.html
+  - type: ResearchRepository
+    url: https://iris.unil.ch
+  - type: CourseCatalog
+    url: https://applicationspub.unil.ch/interpub/noauth/php/Ud/index.php?v_lang=en
+  - type: ResearchComputing
+    url: https://www.unil.ch/ci/dcsr
+  - type: AIPolicy
+    url: https://www.unil.ch/unil/en/home/menuinst/universite/intelligence-artificielle.html
+  - type: AITooling
+    url: https://www.unil.ch/unil/en/home/menuinst/universite/intelligence-artificielle/faq.html
+  - type: OpenScience
+    url: https://www.unil.ch/unil/en/home/menuinst/recherche/open-science.html
+  - type: Conformance
+    url: conformance/university-of-lausanne-conformance.yml
+  - type: Authentication
+    url: authentication/university-of-lausanne-authentication.yml
+  - type: ErrorCatalog
+    url: errors/university-of-lausanne-errors.yml
+  - type: Lifecycle
+    url: lifecycle/university-of-lausanne-lifecycle.yml
+  - type: Vocabulary
+    url: vocabulary/university-of-lausanne-vocabulary.yml
   - type: AgenticAccess
     url: agentic-access/university-of-lausanne-agentic-access.yml
   - type: DomainSecurity
     url: security/university-of-lausanne-domain-security.yml
-  - type: Website
-    url: https://www.unil.ch
-  - type: GitHub
-    url: https://github.com/openscienceunil
-  - type: LinkedIn
-    url: https://www.linkedin.com/school/university-of-lausanne/
-  - type: Authentication
-    url: https://my.unil.ch/
   - type: Plans
     url: plans/university-of-lausanne-plans-pricing.yml
   - type: RateLimits
@@ -132,6 +318,72 @@ common:
     url: finops/university-of-lausanne-finops.yml
   - type: Review
     url: review.yml
+x-coverage:
+  state: covered
+  reason: covered
+  detail: >-
+    UNIL operates three anonymously callable surfaces on its own registrable
+    domain and all three are contracted here: the SPICA atlas API
+    (spica.unil.ch), the IRIS DSpace-CRIS REST API and its two OAI-PMH contexts
+    (api.unil.ch/iris/server). Its own Shibboleth IdP is registered in SWITCHaai
+    and exported to eduGAIN, and it holds a DataCite repository registration
+    under DOI prefix 10.48657. What UNIL does NOT publish is equally settled and
+    was probed rather than assumed: no developer portal (developer.unil.ch and
+    developers.unil.ch do not resolve), no open-data portal (data.unil.ch and
+    opendata.unil.ch do not resolve), no llms.txt, no OpenAPI of its own, no
+    MCP server, and no machine-readable course catalog — the public course
+    catalogue at applicationspub.unil.ch is HTML with no JSON or XML export.
+    The Kong gateway at api.unil.ch routes only /iris/server; every other prefix
+    probed returned the gateway's own 404. The previous institutional repository
+    at serval.unil.ch is correctly retired with a hard HTTP 410 and must not be
+    re-listed. Student information, timetables and registration sit behind
+    my.unil.ch SSO and are not documented as APIs. No vendor contract was found
+    attributed to UNIL, and none was saved.
+  evidence:
+  - url: https://spica.unil.ch/projects.json
+    status: 200
+  - url: https://api.unil.ch/iris/server/api
+    status: 200
+  - url: https://api.unil.ch/iris/server/api/core/collections
+    status: 200
+  - url: https://api.unil.ch/iris/server/api/discover/search/objects?size=1
+    status: 200
+  - url: https://api.unil.ch/iris/server/api/core/items
+    status: 401
+  - url: https://api.unil.ch/iris/server/oai/request?verb=Identify
+    status: 200
+  - url: https://api.unil.ch/iris/server/oai/openairecris?verb=Identify
+    status: 200
+  - url: https://metadata.aai.switch.ch/metadata.switchaai+idp.xml
+    status: 200
+  - url: https://mds.edugain.org/edugain-v2.xml
+    status: 200
+  - url: https://api.datacite.org/clients/pwkb.pgdjam
+    status: 200
+  - url: https://api.ror.org/organizations/https://ror.org/019whta54
+    status: 200
+  - url: https://serval.unil.ch/oai/request?verb=Identify
+    status: 410
+  - url: https://api.unil.ch/
+    status: 404
+  - url: https://www.unil.ch/llms.txt
+    status: 404
+  - url: https://www.unil.ch/.well-known/security.txt
+    status: 200
+  - url: https://applicationspub.unil.ch/interpub/noauth/php/Ud/index.php?v_lang=en
+    status: 200
+  checked: '2026-09-01'
+x-enrichment:
+  pipeline: pipeline-university
+  run: '2026-09-01'
+  note: >-
+    Re-profiled under the university pipeline's operator axis. Every surface was
+    re-probed and assigned an x-operator; no vendor-operated contract was found
+    in this repository and none was removed. Two surface classes the June 2026
+    pass missed were added: the IRIS OAI-PMH interface and UNIL's own Shibboleth
+    identity provider. The apis.yml entries for the IRIS surfaces carried
+    baseURL https://spica.unil.ch, which was wrong — they have been re-based
+    onto api.unil.ch.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
