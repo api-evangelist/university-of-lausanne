@@ -1,0 +1,11 @@
+{
+  "repo": "university-of-lausanne",
+  "feeds": [
+    {
+      "source": "https://www.linkedin.com/school/university-of-lausanne/",
+      "error": "HTTPError"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-09-06T19:17:18Z"
+}
