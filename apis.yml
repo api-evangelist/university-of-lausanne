@@ -74,13 +74,11 @@ apis:
   name: SPICA Atlas Projects.json API
   x-operator: institution
   description: >-
-    The SPICA single-cell / spatial atlas project listing, on UNIL's own host
-    spica.unil.ch. Anonymous open read, confirmed 200 on 2026-09-01. SPICA is
-    UNIL-built and UNIL-run; the host, the application and the data are all the
-    institution's, which makes it the clearest institution-operated contract in
-    this repository. The OpenAPI was reconstructed by API Evangelist from
-    https://spica.unil.ch/home/api and confirmed against live responses — UNIL
-    publishes no machine-readable contract of its own.
+    The SPICA single-cell / spatial atlas project listing, on UNIL's own host spica.unil.ch. Anonymous
+    open read, confirmed 200 on 2026-09-01. SPICA is UNIL-built and UNIL-run; the host, the application
+    and the data are all the institution's, which makes it the clearest institution-operated contract
+    in this repository. The OpenAPI was reconstructed by API Evangelist from https://spica.unil.ch/home/api
+    and confirmed against live responses — UNIL publishes no machine-readable contract of its own.
   humanURL: https://spica.unil.ch/home/api
   baseURL: https://spica.unil.ch
   tags:
@@ -94,9 +92,8 @@ apis:
   name: SPICA Atlas Projects API
   x-operator: institution
   description: >-
-    SPICA project query and archive download on UNIL's own host: filter by
-    reference atlas (ref_id), free-text search across metadata and paginate.
-    /projects/query.json confirmed 200 anonymously on 2026-09-01.
+    SPICA project query and archive download on UNIL's own host: filter by reference atlas (ref_id), free-text
+    search across metadata and paginate. /projects/query.json confirmed 200 anonymously on 2026-09-01.
   humanURL: https://spica.unil.ch/home/api
   baseURL: https://spica.unil.ch
   tags:
@@ -112,13 +109,11 @@ apis:
   name: IRIS Repository Core API (DSpace REST)
   x-operator: institution
   description: >-
-    Community and collection resources of IRIS, UNIL's institutional research
-    information system and open-access repository, served from UNIL's own host
-    api.unil.ch behind a Kong gateway. /core/communities and /core/collections
-    both confirmed anonymous 200 on 2026-09-01. The software is DSpace-CRIS/IRIS
-    and the REST contract shape is DSpace's, so no vendor spec is imported here —
-    what is saved is UNIL's own deployment, reconstructed from live responses
-    against UNIL's host. iris@unil.ch is the declared administrative contact.
+    Community and collection resources of IRIS, UNIL's institutional research information system and open-access
+    repository, served from UNIL's own host api.unil.ch behind a Kong gateway. /core/communities and /core/collections
+    both confirmed anonymous 200 on 2026-09-01. The software is DSpace-CRIS/IRIS and the REST contract
+    shape is DSpace's, so no vendor spec is imported here — what is saved is UNIL's own deployment, reconstructed
+    from live responses against UNIL's host. iris@unil.ch is the declared administrative contact.
   humanURL: https://iris.unil.ch
   baseURL: https://api.unil.ch/iris/server/api
   tags:
@@ -132,11 +127,10 @@ apis:
   name: IRIS Repository Discover API (DSpace Discovery)
   x-operator: institution
   description: >-
-    DSpace Discovery search across everything indexed in IRIS. Confirmed
-    anonymous 200 on 2026-09-01, reporting a last page of 253,798 at size=1,
-    i.e. 253,799 indexed objects. This matters because /core/items and
-    /core/bitstreams both answer 401 to an anonymous client, so Discovery is
-    the only callable route to item-level metadata over REST.
+    DSpace Discovery search across everything indexed in IRIS. Confirmed anonymous 200 on 2026-09-01,
+    reporting a last page of 253,798 at size=1, i.e. 253,799 indexed objects. This matters because /core/items
+    and /core/bitstreams both answer 401 to an anonymous client, so Discovery is the only callable route
+    to item-level metadata over REST.
   humanURL: https://iris.unil.ch
   baseURL: https://api.unil.ch/iris/server/api
   tags:
@@ -150,12 +144,10 @@ apis:
   name: IRIS Repository API root (DSpace REST)
   x-operator: institution
   description: >-
-    The IRIS DSpace REST root document, exposing version metadata and a HAL
-    hypermedia catalogue of 92 link relations. On 2026-09-01 it reported
-    irisVersion 1.3.13 and irisRole "follower" — drifted from the 1.3.8 /
-    "leader" observed on 2026-06-03, announced nowhere. dspaceVersion and
-    crisVersion both report the literal string "/", so the underlying DSpace
-    version is undisclosed.
+    The IRIS DSpace REST root document, exposing version metadata and a HAL hypermedia catalogue of 92
+    link relations. On 2026-09-01 it reported irisVersion 1.3.13 and irisRole "follower" — drifted from
+    the 1.3.8 / "leader" observed on 2026-06-03, announced nowhere. dspaceVersion and crisVersion both
+    report the literal string "/", so the underlying DSpace version is undisclosed.
   humanURL: https://iris.unil.ch
   baseURL: https://api.unil.ch/iris/server/api
   tags:
@@ -165,48 +157,23 @@ apis:
     url: openapi/university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml
   - type: Documentation
     url: https://api.unil.ch/iris/server/api
-- aid: university-of-lausanne:university-of-lausanne-oai-pmh-api
-  name: IRIS OAI-PMH
-  x-operator: institution
-  description: >-
-    OAI-PMH 2.0 metadata harvesting for IRIS, on UNIL's own host. Two contexts
-    answer anonymously: /oai/request (11 metadata prefixes — oai_dc, qdc, dim,
-    mods, marc, rdf, ore, mets, didl, etdms, uketd_dc — with community and
-    collection sets) and /oai/openairecris, which declares OpenAIRE Guidelines
-    for CRIS Managers v1.1 compatibility. Identify reports repositoryName
-    "IRIS (follower)", repositoryIdentifier iris.unil.ch, adminEmail
-    iris@unil.ch and earliestDatestamp 2025-05-19T06:21:03Z. This is the
-    institution's strongest standards-conformant machine surface after its IdP,
-    and it satisfies the education regime's oai-pmh standard.
-  humanURL: https://iris.unil.ch
-  baseURL: https://api.unil.ch/iris/server/oai/request
-  tags:
-  - OAI-PMH
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-lausanne-oai-pmh-api-openapi.yml
-  - type: Documentation
-    url: https://www.unil.ch/ci/dcsr
 - aid: university-of-lausanne:unil-shibboleth-idp
   name: UNIL Shibboleth Identity Provider (SAML 2.0 metadata)
   x-operator: federation
   description: >-
-    UNIL's own Shibboleth identity provider, entityID
-    https://aai.unil.ch/idp/shibboleth, carrying an IDPSSODescriptor with
-    OrganizationName "unil.ch", OrganizationDisplayName "Université de Lausanne"
-    and a shibmd:Scope of unil.ch. Registered in the SWITCHaai federation and
-    exported to eduGAIN (confirmed present in mds.edugain.org/edugain-v2.xml on
-    2026-09-01). 145 distinct unil.ch entityIDs are registered in the same
-    aggregate, including a second SAML entity at
-    http://sts.unil.ch/adfs/services/trust and a Keycloak realm at
-    bix.unil.ch/keycloak/realms/edu_id. Recorded as federation rather than
-    discarded as a shared host: the entityID, the scope, the organisation and
-    the identities are UNIL's, while the SSO endpoints run on SWITCH's edu-ID
-    platform at unil.login.eduid.ch. Note that aai.unil.ch has no public A
-    record — the entityID is a URI, not a fetchable host — and SWITCH runs no
-    per-entity MDQ service, so the metadata is readable only from the published
-    aggregates. This is not a developer API and there is no client registration.
-  humanURL: https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/authentification-aai.html
+    UNIL's own Shibboleth identity provider, entityID https://aai.unil.ch/idp/shibboleth, carrying an
+    IDPSSODescriptor with OrganizationName "unil.ch", OrganizationDisplayName "Université de Lausanne"
+    and a shibmd:Scope of unil.ch. Registered in the SWITCHaai federation and exported to eduGAIN (confirmed
+    present in mds.edugain.org/edugain-v2.xml on 2026-09-01). 145 distinct unil.ch entityIDs are registered
+    in the same aggregate, including a second SAML entity at http://sts.unil.ch/adfs/services/trust and
+    a Keycloak realm at bix.unil.ch/keycloak/realms/edu_id. Recorded as federation rather than discarded
+    as a shared host: the entityID, the scope, the organisation and the identities are UNIL's, while the
+    SSO endpoints run on SWITCH's edu-ID platform at unil.login.eduid.ch. Note that aai.unil.ch has no
+    public A record — the entityID is a URI, not a fetchable host — and SWITCH runs no per-entity MDQ
+    service, so the metadata is readable only from the published aggregates. This is not a developer API
+    and there is no client registration.
+  humanURL: >-
+    https://www.unil.ch/ci/fr/home/menuinst/catalogue-de-services/authentification-et-comptes/authentification-aai.html
   baseURL: https://metadata.aai.switch.ch/metadata.switchaai+idp.xml
   tags:
   - Identity Federation
@@ -223,15 +190,12 @@ apis:
   name: DataCite repository registration (UNIL data service)
   x-operator: registry
   description: >-
-    UNIL's membership of the DataCite DOI registry, not DataCite's contract.
-    api.datacite.org/clients?query=unil returns client PWKB.PGDJAM, name
-    "Old DOIs Unil", clientType repository, created 2025-12-12, administered
-    under consortium organisation PWKB (FORS — Swiss Centre of Expertise in the
-    Social Sciences, https://ror.org/00weppy16). DOIs minted under it carry
-    prefix 10.48657 and publisher "UNIL data service" (for example
-    10.48657/mc4b-0958, 10.48657/3499-cq82). Recorded as a fact about the
-    institution; the registry's own specification belongs to DataCite's repo,
-    never to UNIL's.
+    UNIL's membership of the DataCite DOI registry, not DataCite's contract. api.datacite.org/clients?query=unil
+    returns client PWKB.PGDJAM, name "Old DOIs Unil", clientType repository, created 2025-12-12, administered
+    under consortium organisation PWKB (FORS — Swiss Centre of Expertise in the Social Sciences, https://ror.org/00weppy16).
+    DOIs minted under it carry prefix 10.48657 and publisher "UNIL data service" (for example 10.48657/mc4b-0958,
+    10.48657/3499-cq82). Recorded as a fact about the institution; the registry's own specification belongs
+    to DataCite's repo, never to UNIL's.
   humanURL: https://commons.datacite.org/repositories/pwkb.pgdjam
   baseURL: https://api.datacite.org
   tags:
@@ -247,10 +211,9 @@ apis:
   name: ROR organisation registration
   x-operator: registry
   description: >-
-    UNIL's entry in the Research Organization Registry, https://ror.org/019whta54,
-    established 1537, domain unil.ch, cross-walked to Fundref 501100006390, GRID
-    grid.9851.5, ISNI 0000 0001 2165 4204 and Wikidata Q658975. A membership, not
-    a contract: the ROR API is ROR's.
+    UNIL's entry in the Research Organization Registry, https://ror.org/019whta54, established 1537, domain
+    unil.ch, cross-walked to Fundref 501100006390, GRID grid.9851.5, ISNI 0000 0001 2165 4204 and Wikidata
+    Q658975. A membership, not a contract: the ROR API is ROR's.
   humanURL: https://ror.org/019whta54
   baseURL: https://api.ror.org
   tags:
