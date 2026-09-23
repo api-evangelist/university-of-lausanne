@@ -6,6 +6,7 @@
   ],
   "outputs": [
     "university-of-lausanne-core-api-openapi.yml",
+    "university-of-lausanne-discover-api-openapi.yml",
     "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml",
     "university-of-lausanne-projects-api-openapi.yml",
     "university-of-lausanne-projects-json-api-openapi.yml"
@@ -14,22 +15,29 @@
   "errors": [],
   "warnings": [],
   "notes": [
+    "1 archived document(s) dropped as subsets of other archived documents",
     "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "university-of-lausanne-iris.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "university-of-lausanne-iris.yaml: tagged paths GET / -> IRIS Repository (DSpace REST API)",
     "university-of-lausanne-iris.yaml: tagged paths GET /core/communities -> Core",
     "university-of-lausanne-iris.yaml: tagged paths GET /core/communities/{uuid} -> Core",
+    "university-of-lausanne-iris.yaml: tagged paths GET /core/collections -> Core",
+    "university-of-lausanne-iris.yaml: tagged paths GET /discover/search/objects -> Discover",
     "university-of-lausanne-iris.yaml: declared missing tag: Core",
+    "university-of-lausanne-iris.yaml: declared missing tag: Discover",
     "university-of-lausanne-iris.yaml: declared missing tag: IRIS Repository (DSpace REST API)",
     "university-of-lausanne-spica.yaml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "university-of-lausanne-spica.yaml: tagged paths GET /projects.json -> Projects.json",
     "university-of-lausanne-spica.yaml: tagged paths GET /projects/query.json -> Projects",
     "university-of-lausanne-spica.yaml: tagged paths GET /projects/{project_id}/get_file -> Projects",
     "university-of-lausanne-spica.yaml: declared missing tag: Projects",
-    "university-of-lausanne-spica.yaml: declared missing tag: Projects.json"
+    "university-of-lausanne-spica.yaml: declared missing tag: Projects.json",
+    "apis.yml register: already-registered"
   ],
   "skipped": [
+    "_original/university-of-lausanne-iris-oai-pmh.yaml: archived document superseded by a larger archived document",
     "university-of-lausanne-core-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-lausanne-discover-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "university-of-lausanne-iris-repository-dspace-rest-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "university-of-lausanne-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "university-of-lausanne-projects-json-api-openapi.yml: previously refined output, superseded by openapi/_original/"

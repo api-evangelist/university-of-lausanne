@@ -1,0 +1,57 @@
+generated: '2026-09-01'
+method: probed
+source: >-
+  Status codes and bodies observed directly against api.unil.ch, spica.unil.ch
+  and www.unil.ch on 2026-09-01. Written by API Evangelist; UNIL publishes no
+  error reference of its own.
+note: >-
+  No UNIL surface implements RFC 9457 problem+json. Three different error
+  dialects are in play on the same registrable domain, because three different
+  layers answer: the Kong gateway, DSpace, and OAI-PMH.
+dialects:
+- layer: Kong API gateway (api.unil.ch)
+  media_type: application/json
+  shape: '{"message": "...", "request_id": "..."}'
+  observed:
+  - status: 404
+    body: '{"message":"no Route matched with those values","request_id":"..."}'
+    detail: >-
+      Returned for any path the gateway has no route for, including the bare
+      root https://api.unil.ch/ and https://api.unil.ch/iris (the only routed
+      prefix observed is /iris/server). This is a gateway 404, not a UNIL
+      application 404 — it proves a Kong deployment and proves nothing about
+      whether an application exists behind an unrouted path.
+- layer: DSpace 7 REST (api.unil.ch/iris/server/api)
+  media_type: application/json
+  observed:
+  - status: 401
+    detail: /core/items and /core/bitstreams to an anonymous client.
+  - status: 405
+    detail: /config/properties (method not allowed on GET).
+  - status: 404
+    detail: Unknown UUID on /core/communities/{uuid}.
+- layer: OAI-PMH (api.unil.ch/iris/server/oai)
+  media_type: text/xml
+  shape: '<error code="...">message</error> inside HTTP 200'
+  observed:
+  - status: 200
+    body: '<error code="badVerb">Illegal verb</error>'
+    detail: >-
+      Protocol-correct: OAI-PMH signals request errors in the response body,
+      not in the HTTP status. A client that reads only status codes will treat
+      every malformed harvest as a success. Codes defined by the protocol and
+      applicable here are badVerb, badArgument, badResumptionToken,
+      cannotDisseminateFormat, idDoesNotExist, noRecordsMatch,
+      noMetadataFormats and noSetHierarchy.
+  - status: 400
+    detail: >-
+      Returned for a non-existent OAI context — /oai/openaire and /oai/driver
+      both 400 while /oai/request and /oai/openairecris both 200.
+- layer: www.unil.ch (Jahia CMS)
+  media_type: text/html
+  observed:
+  - status: 404
+    detail: >-
+      A real HTML 404 page of ~2,985 or ~6,826 bytes depending on the section.
+      Confirmed a hard 404, not a soft-200 — every dead path probed returned an
+      actual 404 status.

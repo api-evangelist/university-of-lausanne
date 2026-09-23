@@ -1,11 +1,15 @@
 openapi: 3.2.0
 info:
   title: IRIS Repository (DSpace REST API) API
-  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
-  version: 1.3.8
+  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.13) serving the IRIS institutional research repository at the University of Lausanne (UNIL).
+  version: 1.3.13
   contact:
     name: University of Lausanne - IRIS
     url: https://iris.unil.ch
+  x-provenance:
+    generated: '2026-09-01'
+    method: probed
+    source: Reconstructed by API Evangelist from live responses of https://api.unil.ch/iris/server/api on 2026-06-03 and re-probed 2026-09-01 (root, /core/communities, /core/collections, /discover/search/objects, /core/items 401, /core/bitstreams 401). Not published by the University of Lausanne. The software is DSpace-CRIS/IRIS; the deployment, host and content are UNIL's.
 servers:
 - url: https://api.unil.ch/iris/server/api
   description: Production DSpace REST server

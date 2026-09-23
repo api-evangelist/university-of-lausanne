@@ -1,0 +1,197 @@
+openapi: 3.0.3
+info:
+  title: IRIS OAI-PMH (University of Lausanne)
+  description: >-
+    OAI-PMH 2.0 metadata harvesting interface of IRIS, the University of Lausanne
+    (UNIL) institutional research information system and open-access repository.
+    Served from UNIL's own registrable domain (api.unil.ch) behind UNIL's Kong API
+    gateway; UNIL operates the deployment and the content, DSpace-CRIS/IRIS supplies
+    the software. Two harvesting contexts answer anonymously: the default context
+    at /oai/request and an OpenAIRE Guidelines for CRIS Managers v1.1 context at
+    /oai/openairecris. Identify reports repositoryName "IRIS (follower)",
+    repositoryIdentifier iris.unil.ch, adminEmail iris@unil.ch, granularity
+    YYYY-MM-DDThh:mm:ssZ and earliestDatestamp 2025-05-19T06:21:03Z.
+    This specification was written by API Evangelist from live probes of every verb
+    on 2026-09-01; it is not published by UNIL.
+  version: '2.0'
+  contact:
+    name: University of Lausanne - IRIS
+    email: iris@unil.ch
+    url: https://iris.unil.ch
+  x-provenance:
+    generated: '2026-09-01'
+    method: probed
+    source: >-
+      Live OAI-PMH probes of https://api.unil.ch/iris/server/oai/request
+      (Identify, ListMetadataFormats, ListSets, badVerb) and
+      https://api.unil.ch/iris/server/oai/openairecris on 2026-09-01.
+      Written by API Evangelist, not published by the University of Lausanne.
+servers:
+  - url: https://api.unil.ch/iris/server/oai/request
+    description: Default OAI-PMH context (oai_dc and 10 further metadata prefixes)
+  - url: https://api.unil.ch/iris/server/oai/openairecris
+    description: OpenAIRE Guidelines for CRIS Managers v1.1 context
+tags:
+  - name: OAI-PMH
+    description: OAI-PMH 2.0 metadata harvesting verbs.
+paths:
+  /:
+    get:
+      operationId: oaiRequest
+      summary: OAI-PMH request
+      tags: [OAI-PMH]
+      description: >-
+        Single OAI-PMH 2.0 endpoint. The `verb` query parameter selects the
+        protocol request. All six verbs are served over the same path, as the
+        protocol requires. Responses are XML in the
+        http://www.openarchives.org/OAI/2.0/ namespace. Protocol-level failures
+        are returned as HTTP 200 with an <error code="..."> element, not as an
+        HTTP error status — badVerb was confirmed to behave this way on
+        2026-09-01.
+      parameters:
+        - name: verb
+          in: query
+          required: true
+          description: The OAI-PMH verb to execute.
+          schema:
+            type: string
+            enum:
+              - Identify
+              - ListMetadataFormats
+              - ListSets
+              - ListIdentifiers
+              - ListRecords
+              - GetRecord
+        - name: metadataPrefix
+          in: query
+          required: false
+          description: >-
+            Metadata format for ListIdentifiers, ListRecords and GetRecord.
+            Confirmed available on the default context: oai_dc, qdc, dim, mods,
+            marc, rdf, ore, mets, didl, etdms, uketd_dc.
+          schema:
+            type: string
+            example: oai_dc
+        - name: identifier
+          in: query
+          required: false
+          description: >-
+            OAI identifier for GetRecord, in the scheme reported by Identify
+            (oai:iris.unil.ch:iris/1234).
+          schema:
+            type: string
+            example: oai:iris.unil.ch:iris/1234
+        - name: set
+          in: query
+          required: false
+          description: >-
+            Set to restrict a selective harvest to. Set specs are community
+            (com_iris_N) and collection (col_iris_N) scoped.
+          schema:
+            type: string
+            example: col_iris_9
+        - name: from
+          in: query
+          required: false
+          description: Lower datestamp bound, granularity YYYY-MM-DDThh:mm:ssZ.
+          schema:
+            type: string
+            example: '2025-05-19T06:21:03Z'
+        - name: until
+          in: query
+          required: false
+          description: Upper datestamp bound, granularity YYYY-MM-DDThh:mm:ssZ.
+          schema:
+            type: string
+        - name: resumptionToken
+          in: query
+          required: false
+          description: Flow-control token returned by an incomplete list response.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >-
+            An OAI-PMH response document. Carries the requested payload, or an
+            <error> element when the request was not a legal OAI-PMH request.
+          content:
+            text/xml:
+              schema:
+                $ref: '#/components/schemas/OaiPmhResponse'
+        '400':
+          description: >-
+            Returned by the gateway when the OAI context itself does not exist
+            (for example /oai/openaire and /oai/driver, both confirmed 400 on
+            2026-09-01).
+components:
+  schemas:
+    OaiPmhResponse:
+      type: object
+      description: >-
+        OAI-PMH 2.0 response envelope. Described structurally here because the
+        wire format is XML, not JSON.
+      properties:
+        responseDate:
+          type: string
+          format: date-time
+          description: UTC timestamp of the response.
+        request:
+          type: string
+          description: Echo of the request, with the verb as an attribute.
+          example: https://api.unil.ch/iris/server/oai/request
+        error:
+          $ref: '#/components/schemas/OaiError'
+        Identify:
+          $ref: '#/components/schemas/Identify'
+    Identify:
+      type: object
+      description: Repository description returned by the Identify verb.
+      properties:
+        repositoryName:
+          type: string
+          example: IRIS (follower)
+        baseURL:
+          type: string
+          example: https://api.unil.ch/iris/server/oai/request
+        protocolVersion:
+          type: string
+          example: '2.0'
+        adminEmail:
+          type: string
+          example: iris@unil.ch
+        earliestDatestamp:
+          type: string
+          example: '2025-05-19T06:21:03Z'
+        deletedRecord:
+          type: string
+          example: transient
+        granularity:
+          type: string
+          example: YYYY-MM-DDThh:mm:ssZ
+        repositoryIdentifier:
+          type: string
+          description: From the oai-identifier description block.
+          example: iris.unil.ch
+        sampleIdentifier:
+          type: string
+          example: oai:iris.unil.ch:iris/1234
+    OaiError:
+      type: object
+      description: >-
+        Protocol-level error, returned inside an HTTP 200 response.
+      properties:
+        code:
+          type: string
+          enum:
+            - badVerb
+            - badArgument
+            - badResumptionToken
+            - cannotDisseminateFormat
+            - idDoesNotExist
+            - noRecordsMatch
+            - noMetadataFormats
+            - noSetHierarchy
+          example: badVerb
+        message:
+          type: string
+          example: Illegal verb

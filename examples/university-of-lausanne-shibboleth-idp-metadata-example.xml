@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntityDescriptor entityID="https://aai.unil.ch/idp/shibboleth" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:idpdisc="urn:oasis:names:tc:SAML:profiles:SSO:idp-discovery-protocol" xmlns:init="urn:oasis:names:tc:SAML:profiles:SSO:request-init" xmlns:mdrpi="urn:oasis:names:tc:SAML:metadata:rpi" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<Extensions>
+			<mdattr:EntityAttributes xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+                
+				<saml:Attribute Name="http://macedir.org/entity-category-support" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+					<saml:AttributeValue>http://www.geant.net/uri/dataprotection-code-of-conduct/v1</saml:AttributeValue>
+					<saml:AttributeValue>http://refeds.org/category/research-and-scholarship</saml:AttributeValue>
+				</saml:Attribute>
+				<saml:Attribute FriendlyName="swissEduPersonHomeOrganization" Name="urn:oid:2.16.756.1.2.5.1.1.4" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+					<saml:AttributeValue>unil.ch</saml:AttributeValue>
+				</saml:Attribute>
+
+				<saml:Attribute FriendlyName="swissEduPersonHomeOrganizationType" Name="urn:oid:2.16.756.1.2.5.1.1.5" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+					<saml:AttributeValue>university</saml:AttributeValue>
+				</saml:Attribute>
+   
+				<saml:Attribute Name="urn:oasis:names:tc:SAML:attribute:assurance-certification" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri">
+					<saml:AttributeValue>https://refeds.org/sirtfi</saml:AttributeValue>
+				</saml:Attribute>
+			</mdattr:EntityAttributes>
+
+		</Extensions>
+		<IDPSSODescriptor errorURL="http://www.unil.ch/ci/helpdesk" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+			<Extensions>
+				<shibmd:Scope regexp="false">unil.ch</shibmd:Scope>
+				<mdui:UIInfo>
+					<mdui:DisplayName xml:lang="en">Université de Lausanne</mdui:DisplayName>
+					<mdui:DisplayName xml:lang="fr">Université de Lausanne</mdui:DisplayName>
+					<mdui:Description xml:lang="en">Université de Lausanne</mdui:Description>
+					<mdui:Description xml:lang="fr">Université de Lausanne</mdui:Description>
+					<mdui:Keywords xml:lang="en">University Universite Lausanne Switzerland Suisse Vaud UNIL HEC</mdui:Keywords>
+					<mdui:Keywords xml:lang="fr">University Université Lausanne Switzerland Suisse Vaud UNIL HEC</mdui:Keywords>
+					<mdui:Logo height="16" width="16">data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOmlua3NjYXBlPSJodHRwOi8vd3d3Lmlua3NjYXBlLm9yZy9uYW1lc3BhY2VzL2lua3NjYXBlIiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiIHhtbG5zOnNvZGlwb2RpPSJodHRwOi8vc29kaXBvZGkuc291cmNlZm9yZ2UubmV0L0RURC9zb2RpcG9kaS0wLmR0ZCIgeG1sbnM6c3ZnPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ic3ZnMiIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAxNiAxNjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLnN0MHtmaWxsOiMxQzk1Q0Q7fQoJLnN0MXtmaWxsOiNGRkZGRkY7fQo8L3N0eWxlPgo8cmVjdCBjbGFzcz0ic3QwIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiLz4KPGRlZnM+CgkJPGlua3NjYXBlOnBlcnNwZWN0aXZlIGlkPSJwZXJzcGVjdGl2ZTkiIGlua3NjYXBlOnBlcnNwM2Qtb3JpZ2luPSIzNzIuMDQ3MjQgOiAzNTAuNzg3MzkgOiAxIiBpbmtzY2FwZTp2cF94PSIwIDogNTI2LjE4MTA5IDogMSIgaW5rc2NhcGU6dnBfeT0iMCA6IDEwMDAgOiAwIiBpbmtzY2FwZTp2cF96PSI3NDQuMDk0NDggOiA1MjYuMTgxMDkgOiAxIiBzb2RpcG9kaTp0eXBlPSJpbmtzY2FwZTpwZXJzcDNkIj4KCQk8L2lua3NjYXBlOnBlcnNwZWN0aXZlPgo8L2RlZnM+Cjxzb2RpcG9kaTpuYW1lZHZpZXcgYm9yZGVyY29sb3I9IiM2NjY2NjYiIGJvcmRlcm9wYWNpdHk9IjEuMCIgZ3JpZHRvbGVyYW5jZT0iMTAuMCIgZ3VpZGV0b2xlcmFuY2U9IjEwLjAiIGlkPSJiYXNlIiBpbmtzY2FwZTpjdXJyZW50LWxheWVyPSJnMTEiIGlua3NjYXBlOmN4PSI5NS43OTE4NzUiIGlua3NjYXBlOmN5PSIzMy42OTQyOTEiIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwLjAiIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjcxMiIgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxMDI0IiBpbmtzY2FwZTp3aW5kb3cteD0iLTQiIGlua3NjYXBlOndpbmRvdy15PSItNCIgaW5rc2NhcGU6em9vbT0iNC44NTQyNzM5IiBvYmplY3R0b2xlcmFuY2U9IjEwLjAiIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIgc2hvd2dyaWQ9ImZhbHNlIj4KCTwvc29kaXBvZGk6bmFtZWR2aWV3Pgo8cGF0aCBpZD0icGF0aDI3IiBjbGFzcz0ic3QxIiBkPSJNMC42LDUuN2gwLjl2Mi42YzAsMC44LDAuMiwxLjMsMC45LDEuM2MwLjcsMCwwLjktMC41LDAuOS0xLjNWNS43aDAuOXYyLjljMCwxLjItMC43LDEuNy0xLjgsMS43ICBjLTEuMSwwLTEuOC0wLjUtMS44LTEuN1Y1LjciLz4KPHBhdGggaWQ9InBhdGgyOSIgY2xhc3M9InN0MSIgZD0iTTUuNiw1LjdoMS4xTDguNCw5aDBWNS43aDAuOXY0LjVIOC4yTDYuNSw2LjhoMHYzLjNINS42VjUuNyIvPgo8cGF0aCBpZD0icGF0aDMxIiBjbGFzcz0ic3QxIiBkPSJNMTAuNSw1LjdoMC45djQuNWgtMC45VjUuNyIvPgo8cGF0aCBpZD0icGF0aDMzIiBjbGFzcz0ic3QxIiBkPSJNMTIuNyw1LjdoMC45djMuOGgxLjd2MC43aC0yLjZWNS43Ii8+Cjwvc3ZnPgo=</mdui:Logo>
+					<mdui:Logo height="80" width="120">data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYWxxdWVfMiIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgNjU5LjcgMjIzLjYiIHdpZHRoPSIxMjAiIGhlaWdodD0iODAiPgogIDwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyOS41LjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiAyLjEuMCBCdWlsZCAxNDEpICAtLT4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLnN0MCB7CiAgICAgICAgZmlsbDogIzA2ZjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IlVOSUwtTE9HT1RZUEUiPgogICAgPHBhdGggY2xhc3M9InN0MCIgZD0iTTYzMi41LDIyMy42YzcuOCwwLDE0LjMtMi41LDE5LjUtNy42LDUuMS01LDcuNy0xMS41LDcuNy0xOS4zcy0yLjYtMTQuMy03LjctMTkuMy0xMS42LTcuNi0xOS41LTcuNi0xNC4xLDIuNS0xOS4yLDcuNmMtNS4xLDUtNy43LDExLjUtNy43LDE5LjNzMi42LDE0LjMsNy43LDE5LjMsMTEuNSw3LjYsMTkuMiw3LjZNNTI3LjMsNTAuMnYxNjkuOGg0Ny45VjBoLTU5LjljLTgsMC0xMiwzLjktMTIsMTEuOHY5LjdjMCw3LDMuMiwxMS42LDkuNywxMy44bDQuMywxLjNjNi43LDIsMTAsNi42LDEwLDEzLjZNNDI5LjIsNDcuOWg0Ny45VjBoLTQ3Ljl2NDcuOVpNNDI5LjIsMTIwLjR2OTkuNmg0Ny45VjY5LjloLTU5LjljLTgsMC0xMiw0LTEyLDEydjkuN2MwLDcsMy4yLDExLjUsOS43LDEzLjZsNC42LDEuM2M2LjUsMi40LDkuNyw3LDkuNywxMy44TTIzOS4yLDEyMC40djk5LjZoNDcuOXYtOTAuMWMwLTcuMywyLTEzLjEsNS45LTE3LjQsMy45LTQuMyw5LjMtNi40LDE2LjEtNi40czEyLjIsMi4xLDE2LjEsNi40YzMuOSw0LjMsNS45LDEwLjEsNS45LDE3LjR2OTAuMWg0Ny45di05Ni44YzAtMTcuNi00LjYtMzEuNS0xNC00MS45LTkuMy0xMC4zLTIxLjgtMTUuNS0zNy41LTE1LjVzLTE5LjEsMi4zLTI2LjYsNi44Yy03LjUsNC41LTEzLjUsMTEuMS0xNy45LDE5LjZ2LTIyLjNoLTU1LjhjLTgsMC0xMiw0LTEyLDEydjkuN2MwLDcsMy4yLDExLjUsOS43LDEzLjZsNC40LDEuM2M2LjcsMi4yLDEwLDYuOCwxMCwxMy44TTEwNiwyMjMuNmMxNi43LDAsMzEuMy0zLDQzLjctOS4xLDEyLjQtNi4xLDIxLjktMTQuNywyOC40LTI2LDYuNi0xMS4zLDkuOS0yNC42LDkuOS0zOS45VjIwaC00Ny45djEyNmMwLDEwLjgtMywxOS4yLTkuMSwyNS40LTYuMSw2LjEtMTQuMyw5LjItMjQuNyw5LjJzLTE4LjctMy4xLTI0LjctOS4yLTkuMS0xNC42LTkuMS0yNS40VjIwSDEyYy04LDAtMTIsNC0xMiwxMnY5LjdjMCw2LjcsMy4yLDExLjIsOS43LDEzLjZsNC40LDEuM2M2LjcsMiwxMCw2LjYsMTAsMTMuNnY3OC40YzAsMTUuNCwzLjMsMjguNyw5LjksMzkuOSw2LjYsMTEuMywxNiwxOS45LDI4LjQsMjYsMTIuNCw2LjEsMjYuOSw5LjEsNDMuNyw5LjEiLz4KICA8L2c+Cjwvc3ZnPgo=</mdui:Logo>
+					<mdui:InformationURL xml:lang="fr">http://www.unil.ch</mdui:InformationURL>
+					<mdui:InformationURL xml:lang="en">http://www.unil.ch</mdui:InformationURL>
+					<mdui:PrivacyStatementURL xml:lang="fr">https://www.unil.ch/unil/fr/home/menuinst/universite/cadre-legal-et-reglementaire/directives-internes-de-lunil.html</mdui:PrivacyStatementURL>
+					<mdui:PrivacyStatementURL xml:lang="en">https://www.unil.ch/unil/en/home/menuinst/universite/cadre-legal-et-reglementaire/directives-internes-de-lunil.html</mdui:PrivacyStatementURL>
+				</mdui:UIInfo>
+				<mdui:DiscoHints>
+					<mdui:DomainHint>unil.ch</mdui:DomainHint>
+					<mdui:GeolocationHint>geo:46.521542,6.579157</mdui:GeolocationHint>
+				</mdui:DiscoHints>
+			</Extensions>
+			<KeyDescriptor use="signing">
+				<ds:KeyInfo>
+					<ds:X509Data>
+						<ds:X509Certificate>
+MIIDqDCCAhACCQD/wHW9dcQXEjANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAth
+YWkudW5pbC5jaDAeFw0yMzAxMDkxMjE1MDBaFw0zMzAxMDYxMjE1MDBaMBYxFDAS
+BgNVBAMMC2FhaS51bmlsLmNoMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKC
+AYEAhdYjp/9sgXGef/4iuZcFlwHVarSdl1QtX2BX1oEQDpE1b8BYDM0CO+iwzHI5
+sREpJEzolW9uIgGKtpgjRGfb5DgzGRjWe7LrhXMXzlV6Ujft4VAJQjo3jKikgdxE
+dMQqubCDnQVQGX8C12GsWTEJlZc/pVZn+lzhRSs9niL8iJgk2eGuYfFMs5uTYd4b
+7gzJRNtoU/umTM5Js3I/+e55Y9af3nI7fKkMhw8MpxCIGRPNUDCA7odTsT9tVurv
+YReF/GsRJuxTwmRIeSMuozDS/cqswUQgRUpmIOgRD/LqKDK/KSttMx/e3rklGHUi
+896s2OMtUlljx9SESEdFIO5Dyld2Vgec4aWTNWS2RBXizkRyeXH2w2hOaSRlsl7i
+iI7nmnekXwXRyMNaCRvvnrxkvtqKChJ2XY6vAKytabnWd/wIc3cQUcHjkUdYdS+P
+biE8IzQJLtFa3947bt5SEF9yjCov16jU6XZeP5fiGzEgArijrg547/Dn285c7rv5
+lIgDAgMBAAEwDQYJKoZIhvcNAQELBQADggGBABnYLhfjk7D49wVJQ+7AKBs+my/1
+paIWC55DzUH6dbKXQkdmkPoEC2JichdylwsL+ODWaCzIgwFvSffUXT/susw0DxPd
+BU+X87HLl0Y0vRHJn0cDyM+/bFYYWcyV5PheR22wQWpYPRFrJYSv9nHf8LZQVndJ
+A3+c+OQAxqfOhN1GnUt6ra/vlTLvf6gylbKArlsEqHs7tIrTgvfMZBrIuIaBUHu1
+t/5KT0mpsxsNNK3+QEi/3f5FcR2WNkrGwKvUob7zRR0rBZq0ZidSNs0VLCh7EMOr
+XJ5u5CuDNAqkBO0wzj7q0xpmbFIln7LRb3/89NWdnXbDCwiWJwG2UKttXHO3n/Qs
+n85UYdv3MTU+741JjA5iM/Xds52NUYETrmmHD7g/i+eZkzpigmMaZ4HWT7d1ukPe
+eBgycIuRgICvlOBPg/95TE9NOJvT3MzvEOxWSHOq2ZSzVYK+9Iq6gLmcJZB90paK
+OcdWVEckMfoh5kgFSWpwyBV7e+kbyg/Js/AW3Q==
+						</ds:X509Certificate>
+					</ds:X509Data>
+				</ds:KeyInfo>
+			</KeyDescriptor>
+			<ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://unil.login.eduid.ch/idp/profile/SAML2/SOAP/ArtifactResolution" index="1"/>
+			<SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://unil.login.eduid.ch/idp/profile/SAML2/Redirect/SLO"/>
+            <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+            <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://unil.login.eduid.ch/idp/profile/SAML2/Redirect/SSO"/>
+			<SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://unil.login.eduid.ch/idp/profile/SAML2/POST/SSO"/>
+		</IDPSSODescriptor>
+		<AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+			<Extensions>
+				<shibmd:Scope regexp="false">unil.ch</shibmd:Scope>
+			</Extensions>
+			<KeyDescriptor use="signing">
+				<ds:KeyInfo>
+					<ds:X509Data>
+						<ds:X509Certificate>
+MIIDqDCCAhACCQD/wHW9dcQXEjANBgkqhkiG9w0BAQsFADAWMRQwEgYDVQQDDAth
+YWkudW5pbC5jaDAeFw0yMzAxMDkxMjE1MDBaFw0zMzAxMDYxMjE1MDBaMBYxFDAS
+BgNVBAMMC2FhaS51bmlsLmNoMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKC
+AYEAhdYjp/9sgXGef/4iuZcFlwHVarSdl1QtX2BX1oEQDpE1b8BYDM0CO+iwzHI5
+sREpJEzolW9uIgGKtpgjRGfb5DgzGRjWe7LrhXMXzlV6Ujft4VAJQjo3jKikgdxE
+dMQqubCDnQVQGX8C12GsWTEJlZc/pVZn+lzhRSs9niL8iJgk2eGuYfFMs5uTYd4b
+7gzJRNtoU/umTM5Js3I/+e55Y9af3nI7fKkMhw8MpxCIGRPNUDCA7odTsT9tVurv
+YReF/GsRJuxTwmRIeSMuozDS/cqswUQgRUpmIOgRD/LqKDK/KSttMx/e3rklGHUi
+896s2OMtUlljx9SESEdFIO5Dyld2Vgec4aWTNWS2RBXizkRyeXH2w2hOaSRlsl7i
+iI7nmnekXwXRyMNaCRvvnrxkvtqKChJ2XY6vAKytabnWd/wIc3cQUcHjkUdYdS+P
+biE8IzQJLtFa3947bt5SEF9yjCov16jU6XZeP5fiGzEgArijrg547/Dn285c7rv5
+lIgDAgMBAAEwDQYJKoZIhvcNAQELBQADggGBABnYLhfjk7D49wVJQ+7AKBs+my/1
+paIWC55DzUH6dbKXQkdmkPoEC2JichdylwsL+ODWaCzIgwFvSffUXT/susw0DxPd
+BU+X87HLl0Y0vRHJn0cDyM+/bFYYWcyV5PheR22wQWpYPRFrJYSv9nHf8LZQVndJ
+A3+c+OQAxqfOhN1GnUt6ra/vlTLvf6gylbKArlsEqHs7tIrTgvfMZBrIuIaBUHu1
+t/5KT0mpsxsNNK3+QEi/3f5FcR2WNkrGwKvUob7zRR0rBZq0ZidSNs0VLCh7EMOr
+XJ5u5CuDNAqkBO0wzj7q0xpmbFIln7LRb3/89NWdnXbDCwiWJwG2UKttXHO3n/Qs
+n85UYdv3MTU+741JjA5iM/Xds52NUYETrmmHD7g/i+eZkzpigmMaZ4HWT7d1ukPe
+eBgycIuRgICvlOBPg/95TE9NOJvT3MzvEOxWSHOq2ZSzVYK+9Iq6gLmcJZB90paK
+OcdWVEckMfoh5kgFSWpwyBV7e+kbyg/Js/AW3Q==
+						</ds:X509Certificate>
+					</ds:X509Data>
+				</ds:KeyInfo>
+			</KeyDescriptor>
+			<AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://aai.unil.ch/idp/profile/SAML2/SOAP/AttributeQuery"/>
+            <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+            <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+		</AttributeAuthorityDescriptor>
+		<Organization>
+			<OrganizationName xml:lang="en">unil.ch</OrganizationName>
+			<OrganizationDisplayName xml:lang="en">Université de Lausanne</OrganizationDisplayName>
+			<OrganizationDisplayName xml:lang="fr">Université de Lausanne</OrganizationDisplayName>
+			<OrganizationURL xml:lang="en">http://www.unil.ch/</OrganizationURL>
+			<OrganizationURL xml:lang="fr">http://www.unil.ch/</OrganizationURL>
+		</Organization>
+		<ContactPerson contactType="technical">
+			<GivenName>Switch edu-ID</GivenName>
+			<SurName>Team</SurName>
+			<EmailAddress>mailto:eduid-ops@switch.ch</EmailAddress>
+			
+		</ContactPerson>
+		<ContactPerson contactType="support">
+			<GivenName>Equipe</GivenName>
+			<SurName>AAI</SurName>
+			<EmailAddress>mailto:aai@unil.ch</EmailAddress>
+			
+		</ContactPerson>
+		<ContactPerson contactType="support">
+			<GivenName>HelpDesk</GivenName>
+			<SurName>UNIL</SurName>
+			<EmailAddress>mailto:helpdesk@unil.ch</EmailAddress>
+			<TelephoneNumber>+41 21 692 2211</TelephoneNumber>
+		</ContactPerson>                
+		<ContactPerson xmlns:remd="http://refeds.org/metadata" contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+			<GivenName>AAI</GivenName>
+			<SurName>team</SurName>
+			<EmailAddress>mailto:aai@unil.ch</EmailAddress>
+			
+		</ContactPerson>                
+		<ContactPerson xmlns:remd="http://refeds.org/metadata" contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+			<GivenName>Alexandre</GivenName>
+			<SurName>Roy</SurName>
+			<EmailAddress>mailto:Alexandre.Roy@unil.ch</EmailAddress>
+			<TelephoneNumber>+41 21 692 2233</TelephoneNumber>
+		</ContactPerson>                
+		<ContactPerson xmlns:remd="http://refeds.org/metadata" contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+			<GivenName>Christopher</GivenName>
+			<SurName>Greiner</SurName>
+			<EmailAddress>mailto:christopher.greiner@unil.ch</EmailAddress>
+			<TelephoneNumber>+41 21 692 2193</TelephoneNumber>
+		</ContactPerson>                
+		<ContactPerson xmlns:remd="http://refeds.org/metadata" contactType="other" remd:contactType="http://refeds.org/metadata/contactType/security">
+			<GivenName>Gilles</GivenName>
+			<SurName>Ritzmann</SurName>
+			<EmailAddress>mailto:gilles.ritzmann@unil.ch</EmailAddress>
+			<TelephoneNumber>+41 21 692 22 38</TelephoneNumber>
+		</ContactPerson>
+	</EntityDescriptor>

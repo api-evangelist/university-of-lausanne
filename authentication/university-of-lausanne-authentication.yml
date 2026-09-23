@@ -1,0 +1,68 @@
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live probes on 2026-09-01 of api.unil.ch, spica.unil.ch, my.unil.ch and the
+  SWITCHaai federation metadata. Written by API Evangelist, not published by the
+  University of Lausanne.
+note: >-
+  UNIL publishes no developer portal, no API key programme and no client
+  registration of any kind. Every anonymously callable surface below is open
+  read; everything else is behind institutional SSO that only a UNIL account
+  holder or a SWITCHaai/eduGAIN home organisation can traverse. There is no
+  third-party developer path onto any UNIL API.
+surfaces:
+- name: SPICA Atlas API
+  host: spica.unil.ch
+  scheme: none
+  detail: >-
+    Anonymous open read. /projects.json and /projects/query.json both returned
+    200 with no credential on 2026-09-01. No key, no quota header, no
+    registration.
+- name: IRIS DSpace REST API
+  host: api.unil.ch
+  scheme: mixed
+  detail: >-
+    Anonymous open read for /core/communities, /core/collections and
+    /discover/search/objects (all 200 on 2026-09-01). /core/items and
+    /core/bitstreams return 401 to an anonymous client. Authenticated access
+    uses the DSpace 7 /api/authn contract (JWT bearer issued after login,
+    CSRF token via DSPACE-XSRF-TOKEN), reachable in the root document's HAL
+    _links as `authn` and `authorizations`, but IRIS is behind UNIL SSO and
+    there is no self-service account.
+- name: IRIS OAI-PMH
+  host: api.unil.ch
+  scheme: none
+  detail: >-
+    Anonymous open harvest on both contexts, /oai/request and
+    /oai/openairecris. No credential, no registration, no rate-limit header
+    observed.
+- name: UNIL Shibboleth Identity Provider
+  host: aai.unil.ch (entityID namespace; no public A record) / unil.login.eduid.ch
+  scheme: saml2-shibboleth
+  detail: >-
+    entityID https://aai.unil.ch/idp/shibboleth, an IDPSSODescriptor with
+    OrganizationName unil.ch and shibmd:Scope unil.ch, registered in SWITCHaai
+    and exported to eduGAIN. This is the credential authority for everything
+    behind my.unil.ch and for the 145 unil.ch entities registered in the same
+    federation. Its SSO endpoints run on SWITCH's edu-ID platform at
+    unil.login.eduid.ch, so UNIL owns the entity, the scope and the identities
+    while SWITCH hosts the endpoint. The SAML metadata is anonymously readable
+    only from SWITCH's published aggregates
+    (metadata.aai.switch.ch/metadata.switchaai+idp.xml); SWITCH exposes no
+    per-entity MDQ service — /entities/<entityID> answers 400 and
+    /mdq/entities/<entityID> 302s to an HTML help page. Authentication itself
+    is available only to federation members.
+- name: my.unil.ch
+  host: my.unil.ch
+  scheme: institutional-sso
+  detail: >-
+    The gateway in front of UNIL's student-information, timetable and
+    administrative services. Returned 200 (a login surface) on 2026-09-01.
+    Nothing behind it is documented as an API and nothing is reachable without
+    a UNIL identity.
+- name: ADFS / STS
+  host: sts.unil.ch
+  scheme: ws-federation
+  detail: >-
+    A second UNIL federation entity, http://sts.unil.ch/adfs/services/trust,
+    registered in SWITCHaai alongside the Shibboleth IdP.

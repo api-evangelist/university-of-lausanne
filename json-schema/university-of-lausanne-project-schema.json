@@ -56,5 +56,15 @@
       "description": "Canonical URL to the project JSON resource."
     }
   },
-  "required": ["id", "name", "ref_id", "url"]
+  "required": [
+    "id",
+    "name",
+    "ref_id",
+    "url"
+  ],
+  "x-provenance": {
+    "generated": "2026-09-01",
+    "method": "derived",
+    "source": "Derived by API Evangelist from openapi/_original/university-of-lausanne-spica.yaml, itself reconstructed from https://spica.unil.ch/home/api and confirmed against live responses. Not published by the University of Lausanne."
+  }
 }

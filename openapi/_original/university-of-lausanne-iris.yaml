@@ -1,30 +1,24 @@
 openapi: 3.0.3
 info:
   title: IRIS Repository (DSpace REST API)
-  description: >-
-    Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.8) serving the IRIS
-    institutional research repository at the University of Lausanne (UNIL).
-    Exposes communities, collections, items, bundles and bitstreams via a
-    HAL-based hypermedia API. Anonymous read access is available for public
-    content; some endpoints (e.g. /core/items listing) require authentication.
-    This specification was reconstructed from the live API root at
-    https://api.unil.ch/iris/server/api and confirmed against live responses;
-    only confirmed public read endpoints and observed object shapes are included.
-  version: '1.3.8'
+  description: Public DSpace 7 REST/HATEOAS API (IRIS version 1.3.13) serving the IRIS institutional research repository at the University of Lausanne (UNIL). Exposes communities, collections, items, bundles and bitstreams via a HAL-based hypermedia API. Anonymous read access is available for public content; some endpoints (e.g. /core/items listing) require authentication. This specification was reconstructed from the live API root at https://api.unil.ch/iris/server/api and confirmed against live responses; only confirmed public read endpoints and observed object shapes are included.
+  version: 1.3.13
   contact:
     name: University of Lausanne - IRIS
     url: https://iris.unil.ch
+  x-provenance:
+    generated: '2026-09-01'
+    method: probed
+    source: Reconstructed by API Evangelist from live responses of https://api.unil.ch/iris/server/api on 2026-06-03 and re-probed 2026-09-01 (root, /core/communities, /core/collections, /discover/search/objects, /core/items 401, /core/bitstreams 401). Not published by the University of Lausanne. The software is DSpace-CRIS/IRIS; the deployment, host and content are UNIL's.
 servers:
-  - url: https://api.unil.ch/iris/server/api
-    description: Production DSpace REST server
+- url: https://api.unil.ch/iris/server/api
+  description: Production DSpace REST server
 paths:
   /:
     get:
       operationId: getApiRoot
       summary: API root
-      description: >-
-        Returns the DSpace REST root document with version metadata and the
-        HAL hypermedia _links catalog of available resource endpoints.
+      description: Returns the DSpace REST root document with version metadata and the HAL hypermedia _links catalog of available resource endpoints.
       responses:
         '200':
           description: The API root document.
@@ -36,11 +30,10 @@ paths:
     get:
       operationId: listCommunities
       summary: List top-level communities
-      description: >-
-        Returns a paginated HAL collection of communities in the repository.
+      description: Returns a paginated HAL collection of communities in the repository.
       parameters:
-        - $ref: '#/components/parameters/page'
-        - $ref: '#/components/parameters/size'
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/size'
       responses:
         '200':
           description: A paginated collection of communities.
@@ -53,12 +46,12 @@ paths:
       operationId: getCommunity
       summary: Get a community by UUID
       parameters:
-        - name: uuid
-          in: path
-          required: true
-          schema:
-            type: string
-            format: uuid
+      - name: uuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
       responses:
         '200':
           description: A single community.
@@ -68,6 +61,55 @@ paths:
                 $ref: '#/components/schemas/Community'
         '404':
           description: Community not found.
+  /core/collections:
+    get:
+      operationId: listCollections
+      summary: List collections
+      description: Returns a paginated HAL collection of the collections held in IRIS. Confirmed anonymous read on 2026-09-01.
+      parameters:
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/size'
+      responses:
+        '200':
+          description: A paginated collection of collections.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectionPage'
+  /discover/search/objects:
+    get:
+      operationId: searchObjects
+      summary: Search indexed objects
+      description: DSpace Discovery search across everything indexed in IRIS. Confirmed anonymous read on 2026-09-01. Note that /core/items and /core/bitstreams both answer 401 to an anonymous client, so Discovery is the callable route to item-level metadata.
+      parameters:
+      - name: query
+        in: query
+        required: false
+        description: Free-text Discovery query.
+        schema:
+          type: string
+      - name: scope
+        in: query
+        required: false
+        description: UUID of a community or collection to scope the search to.
+        schema:
+          type: string
+          format: uuid
+      - name: dsoType
+        in: query
+        required: false
+        description: Restrict to an object type (item, collection, community).
+        schema:
+          type: string
+      - $ref: '#/components/parameters/page'
+      - $ref: '#/components/parameters/size'
+      responses:
+        '200':
+          description: A Discovery search response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
 components:
   parameters:
     page:
@@ -118,26 +160,24 @@ components:
           description: HAL hypermedia links to available resource endpoints.
     Metadata:
       type: object
-      description: >-
-        DSpace metadata map keyed by qualified field name (e.g. dc.title),
-        each mapping to an ordered list of metadata values.
+      description: DSpace metadata map keyed by qualified field name (e.g. dc.title), each mapping to an ordered list of metadata values.
       additionalProperties:
         type: array
         items:
           $ref: '#/components/schemas/MetadataValue'
       example:
         dc.title:
-          - value: IRIS
-            language: null
-            authority: null
-            confidence: -1
-            place: 0
+        - value: IRIS
+          language: null
+          authority: null
+          confidence: -1
+          place: 0
         dc.identifier.uri:
-          - value: https://iris.unil.ch/handle/iris/1
-            language: null
-            authority: null
-            confidence: -1
-            place: 0
+        - value: https://iris.unil.ch/handle/iris/1
+          language: null
+          authority: null
+          confidence: -1
+          place: 0
     MetadataValue:
       type: object
       properties:
@@ -183,9 +223,7 @@ components:
         _links:
           type: object
           additionalProperties: true
-          description: >-
-            HAL links (collections, logo, subcommunities, parentCommunity,
-            adminGroup, self).
+          description: HAL links (collections, logo, subcommunities, parentCommunity, adminGroup, self).
     PageInfo:
       type: object
       description: Spring Data HAL pagination metadata.
@@ -214,3 +252,83 @@ components:
           additionalProperties: true
         page:
           $ref: '#/components/schemas/PageInfo'
+    Collection:
+      type: object
+      description: A DSpace collection inside an IRIS community.
+      properties:
+        id:
+          type: string
+          format: uuid
+        uuid:
+          type: string
+          format: uuid
+        name:
+          type: string
+          example: Dataset or other products
+        handle:
+          type: string
+          example: iris/9
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        archivedItemsCount:
+          type: integer
+          description: Archived item count; -1 when not computed.
+          example: -1
+        type:
+          type: string
+          example: collection
+        uniqueType:
+          type: string
+          example: core.collection
+        _links:
+          type: object
+          additionalProperties: true
+    CollectionPage:
+      type: object
+      description: A paginated HAL collection of IRIS collections.
+      properties:
+        _embedded:
+          type: object
+          properties:
+            collections:
+              type: array
+              items:
+                $ref: '#/components/schemas/Collection'
+        page:
+          $ref: '#/components/schemas/PageInfo'
+        _links:
+          type: object
+          additionalProperties: true
+    SearchResult:
+      type: object
+      description: A DSpace Discovery search response. On 2026-09-01 the unscoped index reported 253,799 objects.
+      properties:
+        id:
+          type: string
+          nullable: true
+        scope:
+          type: string
+          nullable: true
+        query:
+          type: string
+          nullable: true
+        sort:
+          type: object
+          nullable: true
+          additionalProperties: true
+        configuration:
+          type: string
+          nullable: true
+        type:
+          type: string
+          example: discover
+        uniqueType:
+          type: string
+          example: discover.discover
+        _embedded:
+          type: object
+          description: Carries searchResult, itself a HAL page of hit objects.
+          additionalProperties: true
+        _links:
+          type: object
+          additionalProperties: true

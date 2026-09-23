@@ -1,0 +1,52 @@
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live probes on 2026-09-01 plus the version strings the surfaces report about
+  themselves. Written by API Evangelist; UNIL publishes no changelog, no
+  deprecation policy and no versioning statement for any of these surfaces.
+note: >-
+  None of UNIL's callable surfaces carries a version in its path or in a header.
+  Version is discoverable only by reading what the application says about itself
+  in a response body, which means a consumer cannot pin one.
+events:
+- date: '2025-05-19'
+  surface: IRIS
+  event: earliest-datestamp
+  detail: >-
+    OAI-PMH Identify reports earliestDatestamp 2025-05-19T06:21:03Z — the
+    effective start of the IRIS repository's harvestable record.
+- date: '2026-06-03'
+  surface: IRIS
+  event: version-observed
+  detail: >-
+    The DSpace-CRIS root document reported irisVersion 1.3.8, irisRole "leader".
+- date: '2026-09-01'
+  surface: IRIS
+  event: version-drift
+  detail: >-
+    Re-probe returned irisVersion 1.3.13 and irisRole "follower" — two patch
+    releases and a role change since June, announced nowhere. dspaceVersion and
+    crisVersion both report the literal string "/", so the underlying DSpace
+    version is not disclosed at all. The saved contract has been re-based to
+    1.3.13.
+- date: '2026-09-01'
+  surface: SERVAL
+  event: retired
+  detail: >-
+    serval.unil.ch, UNIL's previous institutional repository, returns HTTP 410
+    Gone at both the root and /oai/request. It has been superseded by IRIS at
+    iris.unil.ch / api.unil.ch/iris. This is a correct retirement — a real 410,
+    not a soft-404 — and the old apis.yml-era pointer to it is dead and must not
+    be re-added.
+- date: '2026-09-01'
+  surface: IRIS Discovery index
+  event: scale-observed
+  detail: >-
+    /discover/search/objects?size=1 reported a last page of 253,798, i.e.
+    253,799 indexed objects.
+- date: '2026-09-01'
+  surface: SPICA
+  event: version-observed
+  detail: >-
+    SPICA declares no version anywhere in its documentation or responses; the
+    saved contract's 1.0.0 is API Evangelist's, not UNIL's.

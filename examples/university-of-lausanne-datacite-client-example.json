@@ -1,0 +1,45 @@
+{
+    "data": {
+        "id": "pwkb.pgdjam",
+        "type": "clients",
+        "attributes": {
+            "name": "Old DOIs Unil",
+            "symbol": "PWKB.PGDJAM",
+            "year": 2025,
+            "alternateName": null,
+            "description": null,
+            "language": [],
+            "clientType": "repository",
+            "domains": "*",
+            "re3data": null,
+            "opendoar": null,
+            "issn": {},
+            "url": null,
+            "created": "2025-12-12T09:57:28.000Z",
+            "updated": "2025-12-12T10:07:55.000Z",
+            "isActive": true
+        },
+        "relationships": {
+            "provider": {
+                "data": {
+                    "id": "pwkb",
+                    "type": "providers"
+                }
+            },
+            "consortium": {
+                "data": {
+                    "id": "TEYQ",
+                    "type": "providers"
+                }
+            },
+            "prefixes": {
+                "data": [
+                    {
+                        "id": "10.48566",
+                        "type": "prefixes"
+                    }
+                ]
+            }
+        }
+    }
+}

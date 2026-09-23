@@ -1,0 +1,1209 @@
+{
+    "id": null,
+    "scope": null,
+    "query": null,
+    "appliedFilters": null,
+    "sort": null,
+    "configuration": null,
+    "type": "discover",
+    "uniqueType": "discover.discover",
+    "_links": {
+        "self": {
+            "href": "https://api.unil.ch/iris/server/api/discover/search/objects"
+        }
+    },
+    "_embedded": {
+        "searchResult": {
+            "_links": {
+                "next": {
+                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?page=1&size=1"
+                },
+                "last": {
+                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?page=253798&size=1"
+                },
+                "self": {
+                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?size=1"
+                }
+            },
+            "_embedded": {
+                "objects": [
+                    {
+                        "hitHighlights": null,
+                        "type": "discover",
+                        "uniqueType": "discover.discover",
+                        "_links": {
+                            "indexableObject": {
+                                "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23"
+                            }
+                        },
+                        "_embedded": {
+                            "indexableObject": {
+                                "id": "18d1db03-1fbb-4e52-a41e-9a4021483f23",
+                                "uuid": "18d1db03-1fbb-4e52-a41e-9a4021483f23",
+                                "name": "Barzaghi, Nora",
+                                "handle": "iris/15948",
+                                "metadata": {
+                                    "cris.customurl": [
+                                        {
+                                            "value": "norabarzaghi",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "dc.date.accessioned": [
+                                        {
+                                            "value": "2025-05-19T08:30:12Z",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "dc.date.available": [
+                                        {
+                                            "value": "2025-05-19T08:30:12Z",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "dc.identifier.uri": [
+                                        {
+                                            "value": "https://iris.unil.ch/handle/iris/15948",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "dc.title": [
+                                        {
+                                            "value": "Barzaghi, Nora",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "dspace.entity.type": [
+                                        {
+                                            "value": "Person",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "person.familyName": [
+                                        {
+                                            "value": "Barzaghi",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "person.givenName": [
+                                        {
+                                            "value": "Nora",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "person.role": [
+                                        {
+                                            "value": "student",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ],
+                                    "unil.active": [
+                                        {
+                                            "value": "false",
+                                            "language": null,
+                                            "authority": null,
+                                            "confidence": -1,
+                                            "place": 0
+                                        }
+                                    ]
+                                },
+                                "inArchive": true,
+                                "discoverable": true,
+                                "withdrawn": false,
+                                "lastModified": "2026-01-21T08:48:09.156+00:00",
+                                "entityType": "Person",
+                                "type": "item",
+                                "uniqueType": "core.item",
+                                "_links": {
+                                    "accessStatus": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/accessStatus"
+                                    },
+                                    "bundles": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/bundles"
+                                    },
+                                    "identifiers": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/identifiers"
+                                    },
+                                    "mappedCollections": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/mappedCollections"
+                                    },
+                                    "owningCollection": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/owningCollection"
+                                    },
+                                    "relationships": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/relationships"
+                                    },
+                                    "version": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/version"
+                                    },
+                                    "templateItemOf": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/templateItemOf"
+                                    },
+                                    "thumbnail": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/thumbnail"
+                                    },
+                                    "metrics": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/metrics"
+                                    },
+                                    "submitter": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23/submitter"
+                                    },
+                                    "self": {
+                                        "href": "https://api.unil.ch/iris/server/api/core/items/18d1db03-1fbb-4e52-a41e-9a4021483f23"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            },
+            "page": {
+                "number": 0,
+                "size": 1,
+                "totalPages": 253799,
+                "totalElements": 253799
+            }
+        },
+        "facets": [
+            {
+                "name": "entityType",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "0",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/entityType?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/entityType?f.entityType=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Publication",
+                            "count": 221419,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.entityType=Publication,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Person",
+                            "count": 22382,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.entityType=Person,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Journal",
+                            "count": 9440,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.entityType=Journal,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "OrgUnit",
+                            "count": 558,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.entityType=OrgUnit,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "ctbperson",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "52353",
+                "minValue": "Aaltvedt, Morten",
+                "maxValue": "Zysset, Fr\u00e9d\u00e9ric",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/ctbperson?page=1&size=5"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/ctbperson?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/ctbperson?f.ctbperson=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Marques-Vidal, Pedro Manuel",
+                            "count": 1074,
+                            "authorityKey": "791f1b2d-b6c2-4918-8b9e-201909a74edf",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.ctbperson=791f1b2d-b6c2-4918-8b9e-201909a74edf,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Von Segesser, Ludwig Karl",
+                            "count": 1010,
+                            "authorityKey": "f1a1d9fc-3310-4194-b1bf-e8943faaac8a",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.ctbperson=f1a1d9fc-3310-4194-b1bf-e8943faaac8a,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Burnier, Michel",
+                            "count": 972,
+                            "authorityKey": "bd0724ec-e4fc-4b58-bd9e-3ad65e8e6796",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.ctbperson=bd0724ec-e4fc-4b58-bd9e-3ad65e8e6796,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Vollenweider, Peter",
+                            "count": 737,
+                            "authorityKey": "3b66478b-8ebd-4d6c-b6db-fe55c2a1713e",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.ctbperson=3b66478b-8ebd-4d6c-b6db-fe55c2a1713e,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Waeber, G\u00e9rard",
+                            "count": 727,
+                            "authorityKey": "a8a03c8e-f032-446e-9c1e-4b7808e4746b",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.ctbperson=a8a03c8e-f032-446e-9c1e-4b7808e4746b,authority"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "author",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "35071",
+                "minValue": "& Bovina I.,",
+                "maxValue": "\u0428\u0435\u043b\u0435\u0445\u0430\u043d\u044c, \u041e\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/author?page=1&size=5"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/author?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/author?f.author=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Burnier, M.",
+                            "count": 749,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.author=Burnier,%20M.,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Marques-Vidal, P.",
+                            "count": 670,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.author=Marques-Vidal,%20P.,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Waeber, G.",
+                            "count": 575,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.author=Waeber,%20G.,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Vollenweider, P.",
+                            "count": 539,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.author=Vollenweider,%20P.,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Demartines, N.",
+                            "count": 528,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.author=Demartines,%20N.,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "dateIssued",
+                "facetType": "date",
+                "facetLimit": 5,
+                "minValue": "0101",
+                "maxValue": "2027-06",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/dateIssued?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/dateIssued?f.dateIssued=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "1560 - 1949",
+                            "count": 302,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.dateIssued=%5B1560%20TO%201949%5D,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "1950 - 2027",
+                            "count": 220171,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.dateIssued=%5B1950%20TO%202027%5D,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "itemtype",
+                "facetType": "hierarchical",
+                "facetLimit": 10,
+                "missing": "31822",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 10
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/itemtype?page=1&size=10"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/itemtype?size=10"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/itemtype?f.itemtype=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "publication in a journal",
+                            "count": 146742,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=publication%20in%20a%20journal,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "journal article",
+                            "count": 116096,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=journal%20article,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "book part",
+                            "count": 24478,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=book%20part,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "thesis",
+                            "count": 19034,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=thesis,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "review article",
+                            "count": 13299,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=review%20article,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "conference output",
+                            "count": 12070,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=conference%20output,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "doctoral thesis",
+                            "count": 10246,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=doctoral%20thesis,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "master thesis",
+                            "count": 8657,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=master%20thesis,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "chapter",
+                            "count": 8452,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=chapter,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "book",
+                            "count": 8254,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.itemtype=book,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "journal",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "104947",
+                "minValue": "\u00aballegoria\u00bb",
+                "maxValue": "\u7a7a\u9593\u30fb\u793e\u4f1a\u30fb\u5730\u7406\u601d\u60f3",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/journal?page=1&size=5"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/journal?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/journal?f.journal=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Revue m\u00e9dicale suisse",
+                            "count": 4727,
+                            "authorityKey": "56ddb6c5-8224-41a4-932a-9c7ba2158e0a",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.journal=56ddb6c5-8224-41a4-932a-9c7ba2158e0a,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "PLoS ONE",
+                            "count": 1214,
+                            "authorityKey": "3ca15840-d25f-47d0-a4c8-22223ad6e1f6",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.journal=3ca15840-d25f-47d0-a4c8-22223ad6e1f6,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Revue M\u00e9dicale de la Suisse Romande",
+                            "count": 1059,
+                            "authorityKey": "f5dc3c24-5af6-47b6-978a-d522f759c388",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.journal=f5dc3c24-5af6-47b6-978a-d522f759c388,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "M\u00e9decine et hygi\u00e8ne",
+                            "count": 876,
+                            "authorityKey": "6797a17a-e93f-4dec-bc84-09b8d33d0678",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.journal=6797a17a-e93f-4dec-bc84-09b8d33d0678,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Swiss Medical Weekly",
+                            "count": 779,
+                            "authorityKey": "a2399082-fee7-4e5f-8502-732c9347c104",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.journal=a2399082-fee7-4e5f-8502-732c9347c104,authority"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "has_content_in_original_bundle",
+                "facetType": "standard",
+                "facetLimit": 2,
+                "missing": "0",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 2
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/has_content_in_original_bundle?size=2"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/has_content_in_original_bundle?f.has_content_in_original_bundle=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "false",
+                            "count": 185745,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.has_content_in_original_bundle=false,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "true",
+                            "count": 68054,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.has_content_in_original_bundle=true,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "language",
+                "facetType": "text",
+                "facetLimit": 10,
+                "missing": "67107",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 10
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/language?page=1&size=10"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/language?size=10"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/language?f.language=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "english",
+                            "count": 120991,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=english,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "french",
+                            "count": 56305,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=french,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "german",
+                            "count": 5720,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=german,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "italian",
+                            "count": 2557,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=italian,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "spanish",
+                            "count": 1133,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=spanish,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "russian",
+                            "count": 308,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=russian,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "portuguese",
+                            "count": 169,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=portuguese,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "arabic",
+                            "count": 80,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=arabic,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "czech",
+                            "count": 77,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=czech,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "UNKNOWN KEY eng",
+                            "count": 66,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.language=UNKNOWN%20KEY%20eng,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "subject",
+                "facetType": "hierarchical",
+                "facetLimit": 5,
+                "missing": "149078",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/subject?page=1&size=5"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/subject?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/subject?f.subject=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Humans",
+                            "count": 43304,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.subject=Humans,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Female",
+                            "count": 20218,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.subject=Female,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Male",
+                            "count": 19881,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.subject=Male,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Adult",
+                            "count": 12254,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.subject=Adult,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Animals",
+                            "count": 11602,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.subject=Animals,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "generalOrgUnitsUnil",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "74483",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "next": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/generalOrgUnitsUnil?page=1&size=5"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/generalOrgUnitsUnil?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/generalOrgUnitsUnil?f.generalOrgUnitsUnil=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Facult\u00e9 de biologie et de m\u00e9decine",
+                            "count": 8854,
+                            "authorityKey": "6a91220b-7d4e-4251-b20c-becf853ea58b",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalOrgUnitsUnil=6a91220b-7d4e-4251-b20c-becf853ea58b,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "PMU/UNISANTE",
+                            "count": 6260,
+                            "authorityKey": "59657367-1567-4563-82e7-8b09bf050b90",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalOrgUnitsUnil=59657367-1567-4563-82e7-8b09bf050b90,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "ISS",
+                            "count": 5090,
+                            "authorityKey": "03d2460c-00a5-4b79-a4e0-4b4696523a91",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalOrgUnitsUnil=03d2460c-00a5-4b79-a4e0-4b4696523a91,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "M\u00e9decine sociale et pr\u00e9ventive (IUMSP)",
+                            "count": 5084,
+                            "authorityKey": "62e9a185-9b65-4cd0-b872-83bb6c8cedee",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalOrgUnitsUnil=62e9a185-9b65-4cd0-b872-83bb6c8cedee,authority"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Service de radiodiagnostic et radiologie interventionnelle",
+                            "count": 4722,
+                            "authorityKey": "5d0acf29-c453-4e6a-8d36-5878334d376b",
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalOrgUnitsUnil=5d0acf29-c453-4e6a-8d36-5878334d376b,authority"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "generalInstitutionUnil",
+                "facetType": "text",
+                "facetLimit": 10,
+                "missing": "31823",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 10
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/generalInstitutionUnil?size=10"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/generalInstitutionUnil?f.generalInstitutionUnil=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "UNIL/CHUV/Unisant\u00e9 + partner institutions",
+                            "count": 176080,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalInstitutionUnil=UNIL/CHUV/Unisant%C3%A9%20+%20partner%20institutions,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "External",
+                            "count": 45896,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.generalInstitutionUnil=External,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "name": "unilActive",
+                "facetType": "text",
+                "facetLimit": 5,
+                "missing": "230960",
+                "uniqueType": "discover.discover",
+                "page": {
+                    "number": 0,
+                    "size": 5
+                },
+                "_links": {
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/unilActive?size=5"
+                    },
+                    "missing": {
+                        "href": "https://api.unil.ch/iris/server/api/discover/facets/unilActive?f.unilActive=%5B*%20TO%20*%5D,notequals"
+                    }
+                },
+                "_embedded": {
+                    "values": [
+                        {
+                            "label": "Former member",
+                            "count": 18078,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.unilActive=Former%20member,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Current member",
+                            "count": 4203,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.unilActive=Current%20member,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Current unit",
+                            "count": 333,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.unilActive=Current%20unit,equals"
+                                }
+                            }
+                        },
+                        {
+                            "label": "Former unit",
+                            "count": 225,
+                            "authorityKey": null,
+                            "type": "discover",
+                            "uniqueType": "discover.discover",
+                            "_links": {
+                                "search": {
+                                    "href": "https://api.unil.ch/iris/server/api/discover/search/objects?f.unilActive=Former%20unit,equals"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,99 @@
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live probes on 2026-09-01 of the University of Lausanne's own hosts
+  (api.unil.ch, spica.unil.ch, www.unil.ch) plus the SWITCHaai federation
+  metadata aggregate (metadata.aai.switch.ch), the DataCite REST API
+  (api.datacite.org) and the ROR REST API (api.ror.org). Written by API
+  Evangelist; the University of Lausanne makes no conformance claim of its own.
+note: >-
+  Scored against the Kin Score `education` regulatory regime standards[]:
+  scim, lti, oneroster, ed-fi, caliper, qti, oai-pmh, shibboleth, saml, orcid,
+  datacite, crossref. Reward-only. A standard is asserted true only where a
+  probe returned the conforming artifact itself; everything unevidenced is left
+  false rather than assumed, including standards UNIL almost certainly uses
+  internally behind my.unil.ch (LTI in Moodle, SCIM in its directory) but does
+  not expose on any anonymously reachable surface.
+standards:
+- id: oai-pmh
+  conforms: true
+  evidence: >-
+    IRIS serves two anonymous OAI-PMH 2.0 contexts on UNIL's own host.
+    https://api.unil.ch/iris/server/oai/request?verb=Identify returns
+    protocolVersion 2.0, repositoryName "IRIS (follower)", baseURL
+    https://api.unil.ch/iris/server/oai/request, adminEmail iris@unil.ch,
+    granularity YYYY-MM-DDThh:mm:ssZ, earliestDatestamp 2025-05-19T06:21:03Z,
+    deletedRecord transient, and an oai-identifier block with
+    repositoryIdentifier iris.unil.ch. ListMetadataFormats returns 11 prefixes
+    (oai_dc, qdc, dim, mods, marc, rdf, ore, mets, didl, etdms, uketd_dc);
+    ListSets returns community (com_iris_N) and collection (col_iris_N) sets;
+    verb=Bogus returns <error code="badVerb">Illegal verb</error> inside HTTP 200,
+    which is the protocol-correct behaviour. A second context at
+    https://api.unil.ch/iris/server/oai/openairecris declares OpenAIRE Guidelines
+    for CRIS Managers v1.1 compatibility.
+  location: openapi/university-of-lausanne-oai-pmh-api-openapi.yml
+- id: shibboleth
+  conforms: true
+  evidence: >-
+    UNIL operates its own Shibboleth Identity Provider, entityID
+    https://aai.unil.ch/idp/shibboleth — UNIL's own namespace, with
+    OrganizationName "unil.ch", OrganizationDisplayName "Université de
+    Lausanne" and a shibmd:Scope of unil.ch. The entity carries an
+    IDPSSODescriptor (not an SPSSODescriptor) and appears in SWITCH's IdP-only
+    aggregate https://metadata.aai.switch.ch/metadata.switchaai+idp.xml
+    (HTTP 200, 1,483,573 bytes, anonymous) and in the full SWITCHaai aggregate
+    https://metadata.aai.switch.ch/metadata.switchaai.xml (HTTP 200, 21,322,447
+    bytes), alongside 145 distinct unil.ch entityIDs. Its SingleSignOnService
+    endpoints resolve to https://unil.login.eduid.ch/idp/profile/SAML2/{Redirect,POST}/SSO
+    — a UNIL-named tenant on SWITCH's edu-ID platform (unil.login.eduid.ch
+    resolves to eduid-idp.lb.trid.switch.ch, 130.59.31.61). The entityID, the
+    scope, the organisation and the identities are UNIL's; the hosting is
+    SWITCH's. Recorded as federation, which is what that split is for.
+  location: examples/university-of-lausanne-shibboleth-idp-metadata-example.xml
+- id: saml
+  conforms: true
+  evidence: >-
+    The same EntityDescriptor is a SAML 2.0 metadata document in the
+    urn:oasis:names:tc:SAML:2.0:metadata namespace, XML-signed at the aggregate
+    level, and exported onward to eduGAIN — confirmed present in
+    https://mds.edugain.org/edugain-v2.xml (HTTP 200, 93,191,945 bytes) on
+    2026-09-01. UNIL registers a second, non-Shibboleth SAML entity in the same
+    federation, http://sts.unil.ch/adfs/services/trust, plus a Keycloak realm
+    entity at https://bix.unil.ch/keycloak/realms/edu_id on its own host.
+  location: examples/university-of-lausanne-shibboleth-idp-metadata-example.xml
+- id: datacite
+  conforms: true
+  evidence: >-
+    UNIL holds a DataCite repository registration. api.datacite.org/clients?query=unil
+    returns client PWKB.PGDJAM, name "Old DOIs Unil", clientType repository,
+    created 2025-12-12, administered under the consortium organisation PWKB
+    (FORS - Swiss Centre of Expertise in the Social Sciences,
+    https://ror.org/00weppy16). DOIs minted under it carry prefix 10.48657 and
+    publisher "UNIL data service" (for example 10.48657/mc4b-0958,
+    10.48657/3499-cq82). The registry contract is DataCite's, not UNIL's; the
+    membership is UNIL's.
+  location: https://api.datacite.org/clients/pwkb.pgdjam
+- id: scim
+  conforms: false
+- id: lti
+  conforms: false
+- id: oneroster
+  conforms: false
+- id: ed-fi
+  conforms: false
+- id: caliper
+  conforms: false
+- id: qti
+  conforms: false
+- id: orcid
+  conforms: false
+  note: >-
+    The IRIS DSpace-CRIS root document exposes 92 HAL link relations, none of
+    them an ORCID endpoint, and no anonymously reachable UNIL surface returns
+    ORCID iDs as a first-class contract. Left false rather than assumed.
+- id: crossref
+  conforms: false
+  note: >-
+    api.crossref.org/members?query=Lausanne returns no University of Lausanne
+    member (the only Lausanne hit is an EPFL laboratory, member 52983). UNIL
+    registers DOIs through DataCite, not Crossref.

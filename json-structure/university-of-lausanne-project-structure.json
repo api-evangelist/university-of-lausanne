@@ -5,21 +5,63 @@
   "type": "object",
   "description": "JSON Structure for a SPICA atlas project.",
   "properties": {
-    "id": { "type": "int32", "description": "Internal project identifier." },
-    "public_id": { "type": "int32", "description": "Public-facing identifier." },
-    "key": { "type": "string", "description": "Short alphanumeric project key." },
-    "name": { "type": "string", "description": "Human-readable project name." },
-    "description": { "type": "string", "description": "Project / experiment description." },
-    "ref_id": { "type": "int32", "description": "Reference atlas identifier." },
+    "id": {
+      "type": "int32",
+      "description": "Internal project identifier."
+    },
+    "public_id": {
+      "type": "int32",
+      "description": "Public-facing identifier."
+    },
+    "key": {
+      "type": "string",
+      "description": "Short alphanumeric project key."
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable project name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Project / experiment description."
+    },
+    "ref_id": {
+      "type": "int32",
+      "description": "Reference atlas identifier."
+    },
     "project_attrs": {
       "type": "map",
       "description": "Variable experimental attributes.",
-      "values": { "type": "string" }
+      "values": {
+        "type": "string"
+      }
     },
-    "nber_samples": { "type": "int32", "description": "Number of samples." },
-    "created_at": { "type": "datetime", "description": "Creation timestamp." },
-    "updated_at": { "type": "datetime", "description": "Last update timestamp." },
-    "url": { "type": "uri", "description": "Canonical project JSON URL." }
+    "nber_samples": {
+      "type": "int32",
+      "description": "Number of samples."
+    },
+    "created_at": {
+      "type": "datetime",
+      "description": "Creation timestamp."
+    },
+    "updated_at": {
+      "type": "datetime",
+      "description": "Last update timestamp."
+    },
+    "url": {
+      "type": "uri",
+      "description": "Canonical project JSON URL."
+    }
   },
-  "required": ["id", "name", "ref_id", "url"]
+  "required": [
+    "id",
+    "name",
+    "ref_id",
+    "url"
+  ],
+  "x-provenance": {
+    "generated": "2026-09-01",
+    "method": "derived",
+    "source": "Derived by API Evangelist from openapi/_original/university-of-lausanne-spica.yaml, itself reconstructed from https://spica.unil.ch/home/api and confirmed against live responses. Not published by the University of Lausanne."
+  }
 }

@@ -1,3 +1,9 @@
+generated: '2026-09-01'
+method: derived
+source: >-
+  Derived by API Evangelist from this repository's own OpenAPI contracts for the SPICA Atlas
+  API and the IRIS DSpace REST API, both reconstructed from live UNIL hosts. Not published by
+  the University of Lausanne.
 vocabulary:
   name: University of Lausanne API Vocabulary
   description: >-

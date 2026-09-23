@@ -46,5 +46,10 @@
   "@type": "schema:CollegeOrUniversity",
   "name": "University of Lausanne",
   "url": "https://www.unil.ch",
-  "description": "Public research university in Lausanne, Switzerland (UNIL)."
+  "description": "Public research university in Lausanne, Switzerland (UNIL).",
+  "x-provenance": {
+    "generated": "2026-09-01",
+    "method": "derived",
+    "source": "Derived by API Evangelist from this repository's own OpenAPI contracts for the SPICA Atlas API and the IRIS DSpace REST API, both reconstructed from live UNIL hosts. Not published by the University of Lausanne."
+  }
 }

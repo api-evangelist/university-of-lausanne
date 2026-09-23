@@ -1,3 +1,8 @@
+generated: '2026-09-01'
+method: derived
+source: >-
+  Derived by API Evangelist. UNIL publishes no pricing, plans or commercial terms for any API;
+  this artifact records that absence rather than a plan.
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans

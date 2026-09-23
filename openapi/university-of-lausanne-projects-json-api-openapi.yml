@@ -6,6 +6,10 @@ info:
   contact:
     name: University of Lausanne - SPICA
     url: https://spica.unil.ch/home/api
+  x-provenance:
+    generated: '2026-09-01'
+    method: probed
+    source: Reconstructed by API Evangelist from the public SPICA API documentation at https://spica.unil.ch/home/api and confirmed against live responses (/projects.json 200, /projects/query.json 200) on 2026-06-03 and re-probed 2026-09-01. Not published by the University of Lausanne. SPICA is operated by UNIL on its own host.
 servers:
 - url: https://spica.unil.ch
   description: Production

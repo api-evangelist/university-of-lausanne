@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="static/style.xsl"?><OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2026-09-01T20:41:18Z</responseDate><request verb="Identify">https://api.unil.ch/iris/server/oai/request</request><Identify><repositoryName>IRIS (follower)</repositoryName><baseURL>https://api.unil.ch/iris/server/oai/request</baseURL><protocolVersion>2.0</protocolVersion><adminEmail>iris@unil.ch</adminEmail><earliestDatestamp>2025-05-19T06:21:03Z</earliestDatestamp><deletedRecord>transient</deletedRecord><granularity>YYYY-MM-DDThh:mm:ssZ</granularity><description><oai-identifier xmlns="http://www.openarchives.org/OAI/2.0/oai-identifier" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai-identifier http://www.openarchives.org/OAI/2.0/oai-identifier.xsd">
+<scheme>oai</scheme>
+<repositoryIdentifier>iris.unil.ch</repositoryIdentifier>
+<delimiter>:</delimiter>
+<sampleIdentifier>oai:iris.unil.ch:iris/1234</sampleIdentifier>
+</oai-identifier></description><description><Service xmlns="https://www.openaire.eu/cerif-profile/1.1/" id="iris/0">
+	<Compatibility xmlns="https://www.openaire.eu/cerif-profile/vocab/OpenAIRE_Service_Compatibility">https://www.openaire.eu/cerif-profile/vocab/OpenAIRE_Service_Compatibility#1.1</Compatibility>
+	<Name xml:lang="en">IRIS (follower)</Name>
+	<Description xml:lang="en">An example CRIS that complies with the OpenAIRE Guidelines for CRIS Managers v.1.1.</Description>
+	<WebsiteURL>https://iris.unil.ch</WebsiteURL>
+	<OAIPMHBaseURL>https://api.unil.ch/iris/server/oai/openairecris</OAIPMHBaseURL>
+</Service></description></Identify></OAI-PMH>

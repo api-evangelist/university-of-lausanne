@@ -1,3 +1,8 @@
+generated: '2026-09-01'
+method: derived
+source: >-
+  Derived by API Evangelist. UNIL's APIs are free and uninstrumented for cost; nothing here is
+  a UNIL FinOps statement.
 specification: FinOps Framework
 specificationVersion: '1.0'
 schema: https://www.finops.org/framework/

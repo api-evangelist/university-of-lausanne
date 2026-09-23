@@ -1,0 +1,221 @@
+{
+    "_embedded": {
+        "collections": [
+            {
+                "id": "cf342f32-65f0-4232-a00b-fb5c8a87bf28",
+                "uuid": "cf342f32-65f0-4232-a00b-fb5c8a87bf28",
+                "name": "Dataset or other products",
+                "handle": "iris/9",
+                "metadata": {
+                    "cris.submission.definition": [
+                        {
+                            "value": "product",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dc.identifier.uri": [
+                        {
+                            "value": "https://iris.unil.ch/handle/iris/9",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dc.title": [
+                        {
+                            "value": "Dataset or other products",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dspace.entity.type": [
+                        {
+                            "value": "Product",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ]
+                },
+                "archivedItemsCount": -1,
+                "type": "collection",
+                "uniqueType": "core.collection",
+                "_links": {
+                    "harvester": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/harvester"
+                    },
+                    "itemtemplate": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/itemtemplate"
+                    },
+                    "license": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/license"
+                    },
+                    "logo": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/logo"
+                    },
+                    "mappedItems": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/mappedItems"
+                    },
+                    "parentCommunity": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/parentCommunity"
+                    },
+                    "adminGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/adminGroup"
+                    },
+                    "submittersGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/submittersGroup"
+                    },
+                    "itemReadGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/itemReadGroup"
+                    },
+                    "bitstreamReadGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/bitstreamReadGroup"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28"
+                    },
+                    "workflowGroups": [
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/workflowGroups/reviewer",
+                            "name": "reviewer"
+                        },
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/workflowGroups/editor",
+                            "name": "editor"
+                        },
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/cf342f32-65f0-4232-a00b-fb5c8a87bf28/workflowGroups/finaleditor",
+                            "name": "finaleditor"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "88bc6915-e239-40c2-ab4d-6d9ffe407bf5",
+                "uuid": "88bc6915-e239-40c2-ab4d-6d9ffe407bf5",
+                "name": "Equipment",
+                "handle": "iris/11",
+                "metadata": {
+                    "cris.submission.definition": [
+                        {
+                            "value": "equipment",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dc.identifier.uri": [
+                        {
+                            "value": "https://iris.unil.ch/handle/iris/11",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dc.title": [
+                        {
+                            "value": "Equipment",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ],
+                    "dspace.entity.type": [
+                        {
+                            "value": "Equipment",
+                            "language": null,
+                            "authority": null,
+                            "confidence": -1,
+                            "place": 0
+                        }
+                    ]
+                },
+                "archivedItemsCount": -1,
+                "type": "collection",
+                "uniqueType": "core.collection",
+                "_links": {
+                    "harvester": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/harvester"
+                    },
+                    "itemtemplate": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/itemtemplate"
+                    },
+                    "license": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/license"
+                    },
+                    "logo": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/logo"
+                    },
+                    "mappedItems": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/mappedItems"
+                    },
+                    "parentCommunity": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/parentCommunity"
+                    },
+                    "adminGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/adminGroup"
+                    },
+                    "submittersGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/submittersGroup"
+                    },
+                    "itemReadGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/itemReadGroup"
+                    },
+                    "bitstreamReadGroup": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/bitstreamReadGroup"
+                    },
+                    "self": {
+                        "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5"
+                    },
+                    "workflowGroups": [
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/workflowGroups/reviewer",
+                            "name": "reviewer"
+                        },
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/workflowGroups/editor",
+                            "name": "editor"
+                        },
+                        {
+                            "href": "https://api.unil.ch/iris/server/api/core/collections/88bc6915-e239-40c2-ab4d-6d9ffe407bf5/workflowGroups/finaleditor",
+                            "name": "finaleditor"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "_links": {
+        "first": {
+            "href": "https://api.unil.ch/iris/server/api/core/collections?page=0&size=2"
+        },
+        "self": {
+            "href": "https://api.unil.ch/iris/server/api/core/collections?size=2"
+        },
+        "next": {
+            "href": "https://api.unil.ch/iris/server/api/core/collections?page=1&size=2"
+        },
+        "last": {
+            "href": "https://api.unil.ch/iris/server/api/core/collections?page=4&size=2"
+        },
+        "search": {
+            "href": "https://api.unil.ch/iris/server/api/core/collections/search"
+        }
+    },
+    "page": {
+        "size": 2,
+        "totalElements": 10,
+        "totalPages": 5,
+        "number": 0
+    }
+}
