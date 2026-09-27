@@ -74,6 +74,75 @@ paths:
       - Core
 components:
   schemas:
+    MetadataValue:
+      type: object
+      properties:
+        value:
+          type: string
+        language:
+          type:
+          - string
+          - 'null'
+        authority:
+          type:
+          - string
+          - 'null'
+        confidence:
+          type: integer
+        place:
+          type: integer
+    CommunityPage:
+      type: object
+      description: A paginated HAL collection of communities.
+      properties:
+        _embedded:
+          type: object
+          properties:
+            communities:
+              type: array
+              items:
+                $ref: '#/components/schemas/Community'
+        _links:
+          type: object
+          additionalProperties: true
+        page:
+          $ref: '#/components/schemas/PageInfo'
+    CollectionPage:
+      type: object
+      description: A paginated HAL collection of IRIS collections.
+      properties:
+        _embedded:
+          type: object
+          properties:
+            collections:
+              type: array
+              items:
+                $ref: '#/components/schemas/Collection'
+        page:
+          $ref: '#/components/schemas/PageInfo'
+        _links:
+          type: object
+          additionalProperties: true
+    Metadata:
+      type: object
+      description: DSpace metadata map keyed by qualified field name (e.g. dc.title), each mapping to an ordered list of metadata values.
+      additionalProperties:
+        type: array
+        items:
+          $ref: '#/components/schemas/MetadataValue'
+      example:
+        dc.title:
+        - value: IRIS
+          language: null
+          authority: null
+          confidence: -1
+          place: 0
+        dc.identifier.uri:
+        - value: https://iris.unil.ch/handle/iris/1
+          language: null
+          authority: null
+          confidence: -1
+          place: 0
     PageInfo:
       type: object
       description: Spring Data HAL pagination metadata.
@@ -148,75 +217,6 @@ components:
         _links:
           type: object
           additionalProperties: true
-    MetadataValue:
-      type: object
-      properties:
-        value:
-          type: string
-        language:
-          type:
-          - string
-          - 'null'
-        authority:
-          type:
-          - string
-          - 'null'
-        confidence:
-          type: integer
-        place:
-          type: integer
-    CommunityPage:
-      type: object
-      description: A paginated HAL collection of communities.
-      properties:
-        _embedded:
-          type: object
-          properties:
-            communities:
-              type: array
-              items:
-                $ref: '#/components/schemas/Community'
-        _links:
-          type: object
-          additionalProperties: true
-        page:
-          $ref: '#/components/schemas/PageInfo'
-    CollectionPage:
-      type: object
-      description: A paginated HAL collection of IRIS collections.
-      properties:
-        _embedded:
-          type: object
-          properties:
-            collections:
-              type: array
-              items:
-                $ref: '#/components/schemas/Collection'
-        page:
-          $ref: '#/components/schemas/PageInfo'
-        _links:
-          type: object
-          additionalProperties: true
-    Metadata:
-      type: object
-      description: DSpace metadata map keyed by qualified field name (e.g. dc.title), each mapping to an ordered list of metadata values.
-      additionalProperties:
-        type: array
-        items:
-          $ref: '#/components/schemas/MetadataValue'
-      example:
-        dc.title:
-        - value: IRIS
-          language: null
-          authority: null
-          confidence: -1
-          place: 0
-        dc.identifier.uri:
-        - value: https://iris.unil.ch/handle/iris/1
-          language: null
-          authority: null
-          confidence: -1
-          place: 0
   parameters:
     page:
       name: page
