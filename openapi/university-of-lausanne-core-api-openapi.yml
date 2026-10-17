@@ -74,6 +74,22 @@ paths:
       - Core
 components:
   schemas:
+    CommunityPage:
+      type: object
+      description: A paginated HAL collection of communities.
+      properties:
+        _embedded:
+          type: object
+          properties:
+            communities:
+              type: array
+              items:
+                $ref: '#/components/schemas/Community'
+        _links:
+          type: object
+          additionalProperties: true
+        page:
+          $ref: '#/components/schemas/PageInfo'
     PageInfo:
       type: object
       description: Spring Data HAL pagination metadata.
@@ -85,23 +101,6 @@ components:
         totalPages:
           type: integer
         number:
-          type: integer
-    MetadataValue:
-      type: object
-      properties:
-        value:
-          type: string
-        language:
-          type:
-          - string
-          - 'null'
-        authority:
-          type:
-          - string
-          - 'null'
-        confidence:
-          type: integer
-        place:
           type: integer
     CollectionPage:
       type: object
@@ -139,53 +138,6 @@ components:
           authority: null
           confidence: -1
           place: 0
-    Community:
-      type: object
-      description: A DSpace community (top-level container of collections).
-      properties:
-        id:
-          type: string
-          format: uuid
-          example: b237fe8c-78b9-4bf5-9658-f03c354851b8
-        uuid:
-          type: string
-          format: uuid
-          example: b237fe8c-78b9-4bf5-9658-f03c354851b8
-        name:
-          type: string
-          example: IRIS
-        handle:
-          type: string
-          example: iris/1
-        metadata:
-          $ref: '#/components/schemas/Metadata'
-        archivedItemsCount:
-          type: integer
-        type:
-          type: string
-          example: community
-        uniqueType:
-          type: string
-        _links:
-          type: object
-          additionalProperties: true
-          description: HAL links (collections, logo, subcommunities, parentCommunity, adminGroup, self).
-    CommunityPage:
-      type: object
-      description: A paginated HAL collection of communities.
-      properties:
-        _embedded:
-          type: object
-          properties:
-            communities:
-              type: array
-              items:
-                $ref: '#/components/schemas/Community'
-        _links:
-          type: object
-          additionalProperties: true
-        page:
-          $ref: '#/components/schemas/PageInfo'
     Collection:
       type: object
       description: A DSpace collection inside an IRIS community.
@@ -217,15 +169,55 @@ components:
         _links:
           type: object
           additionalProperties: true
+    Community:
+      type: object
+      description: A DSpace community (top-level container of collections).
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: b237fe8c-78b9-4bf5-9658-f03c354851b8
+        uuid:
+          type: string
+          format: uuid
+          example: b237fe8c-78b9-4bf5-9658-f03c354851b8
+        name:
+          type: string
+          example: IRIS
+        handle:
+          type: string
+          example: iris/1
+        metadata:
+          $ref: '#/components/schemas/Metadata'
+        archivedItemsCount:
+          type: integer
+        type:
+          type: string
+          example: community
+        uniqueType:
+          type: string
+        _links:
+          type: object
+          additionalProperties: true
+          description: HAL links (collections, logo, subcommunities, parentCommunity, adminGroup, self).
+    MetadataValue:
+      type: object
+      properties:
+        value:
+          type: string
+        language:
+          type:
+          - string
+          - 'null'
+        authority:
+          type:
+          - string
+          - 'null'
+        confidence:
+          type: integer
+        place:
+          type: integer
   parameters:
-    size:
-      name: size
-      in: query
-      required: false
-      description: Number of elements per page.
-      schema:
-        type: integer
-        default: 20
     page:
       name: page
       in: query
@@ -234,3 +226,11 @@ components:
       schema:
         type: integer
         default: 0
+    size:
+      name: size
+      in: query
+      required: false
+      description: Number of elements per page.
+      schema:
+        type: integer
+        default: 20
