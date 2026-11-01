@@ -1,4 +1,4 @@
-# University of Lausanne (university-of-lausanne)
+# University of Lausanne
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,46 +64,176 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The University of Lausanne (UNIL) is a public research university in Lausanne, Switzerland, ranked #224 in the QS World University Rankings 2025. This repository catalogs UNIL's public developer/API footprint as an APIs.json provider profile for the API Evangelist network.
+The University of Lausanne (UNIL) is a public research university in Lausanne, Switzerland, founded in 1537, with roughly 17,000 students across seven faculties and ROR identifier https://ror.org/019whta54. UNIL publishes no developer portal, no API key programme, no API terms and no changelog, and no central catalogue of its own interfaces exists — but unlike most of this cohort its small programmable footprint is genuinely its own rather than a vendor's contract wearing its name. Three surfaces answer anonymously on UNIL's own registrable domain: the SPICA single-cell / spatial atlas JSON API at spica.unil.ch; the IRIS institutional research repository's DSpace-CRIS REST API at api.unil.ch/iris/server/api, behind a Kong gateway, with 253,799 indexed objects reachable through Discovery search while /core/items and /core/bitstreams answer 401; and two anonymous OAI-PMH 2.0 harvesting contexts on the same host, one of them declaring OpenAIRE Guidelines for CRIS Managers v1.1. Beyond the contracts, UNIL operates its own Shibboleth identity provider (entityID https://aai.unil.ch/idp/shibboleth, scope unil.ch) registered in SWITCHaai and exported to eduGAIN, and holds a DataCite repository registration minting DOIs under prefix 10.48657. Everything else — student information, timetables, course registration — sits behind the my.unil.ch SSO gateway and is not documented as an API anywhere. No OpenAPI, AsyncAPI or MCP server is published by UNIL itself; every contract in this repository was written by API Evangelist from live probes and is marked as such.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/university-of-lausanne/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=university-of-lausanne-api-evangelist&utm_content=repo
+**Areas:** Education · Higher Education · University · Switzerland · Open Science · Research Data · Institutional Repository · Research Repository · Identity Federation · OAI-PMH · Course Catalog · Research Computing
 
-## Type
+## University of Lausanne on APIs.io
 
-Index / Consumer / 3rd-Party
+Everything profiled for University of Lausanne is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/university-of-lausanne/](https://apis.io/providers/university-of-lausanne/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-Education, Higher Education, University, Switzerland, Open Science, Research Data, Institutional Repository
+- [SPICA Atlas Projects.json API](https://apis.io/apis/university-of-lausanne/university-of-lausanne-projects-json-api/) — The SPICA single-cell / spatial atlas project listing, on UNIL's own host spica.unil.ch. Anonymous open read, confirmed 200 on 2026-09-01. SPICA is…
+- [SPICA Atlas Projects API](https://apis.io/apis/university-of-lausanne/university-of-lausanne-projects-api/) — SPICA project query and archive download on UNIL's own host: filter by reference atlas (ref_id), free-text search across metadata and paginate.…
+- [IRIS Repository Core API (DSpace REST)](https://apis.io/apis/university-of-lausanne/university-of-lausanne-core-api/) — Community and collection resources of IRIS, UNIL's institutional research information system and open-access repository, served from UNIL's own host…
+- [IRIS Repository Discover API (DSpace Discovery)](https://apis.io/apis/university-of-lausanne/university-of-lausanne-discover-api/) — DSpace Discovery search across everything indexed in IRIS. Confirmed anonymous 200 on 2026-09-01, reporting a last page of 253,798 at size=1, i.e. 253,799…
+- [IRIS Repository API root (DSpace REST)](https://apis.io/apis/university-of-lausanne/university-of-lausanne-iris-repository-dspace-rest-api-api/) — The IRIS DSpace REST root document, exposing version metadata and a HAL hypermedia catalogue of 92 link relations. On 2026-09-01 it reported irisVersion…
+- [UNIL Shibboleth Identity Provider (SAML 2.0 metadata)](https://apis.io/apis/university-of-lausanne/unil-shibboleth-idp/) — UNIL's own Shibboleth identity provider, entityID https://aai.unil.ch/idp/shibboleth, carrying an IDPSSODescriptor with OrganizationName "unil.ch",…
+- [DataCite repository registration (UNIL data service)](https://apis.io/apis/university-of-lausanne/datacite-repository-registration/) — UNIL's membership of the DataCite DOI registry, not DataCite's contract. api.datacite.org/clients?query=unil returns client PWKB.PGDJAM, name "Old DOIs…
+- [ROR organisation registration](https://apis.io/apis/university-of-lausanne/ror-registration/) — UNIL's entry in the Research Organization Registry, https://ror.org/019whta54, established 1537, domain unil.ch, cross-walked to Fundref 501100006390, GRID…
 
-## APIs
+### Published properties
 
-- **SPICA Atlas API** — Public JSON API for the SPICA single-cell / spatial atlas (list/filter/search projects, download archives). Docs: https://spica.unil.ch/home/api
-- **IRIS Repository (DSpace REST API)** — Public DSpace 7 REST/HATEOAS API (v1.3.8) for UNIL's IRIS institutional repository. Base: https://api.unil.ch/iris/server/api — UI: https://iris.unil.ch
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Plans / Rate Limits / FinOps
+#### Agentic access (1)
 
-- Plans: [plans/university-of-lausanne-plans-pricing.yml](plans/university-of-lausanne-plans-pricing.yml)
-- Rate Limits: [rate-limits/university-of-lausanne-rate-limits.yml](rate-limits/university-of-lausanne-rate-limits.yml)
-- FinOps: [finops/university-of-lausanne-finops.yml](finops/university-of-lausanne-finops.yml)
+Which operations an agent can call, which act, and which need a human in the loop.
 
-## Timestamps
+- [University Of Lausanne Agentic Access](https://apis.io/agentic-access/university-of-lausanne/university-of-lausanne-agentic-access/)
 
-- Created: 2026-06-03
-- Modified: 2026-06-03
+#### JSON Schema (2)
 
-## Common Properties
+The data models the API reads and writes.
 
-- Website: https://www.unil.ch
-- GitHub: https://github.com/openscienceunil
-- LinkedIn: https://www.linkedin.com/school/university-of-lausanne/
-- Authentication: https://my.unil.ch/
+- [DSpace Community](https://apis.io/schemas/university-of-lausanne/university-of-lausanne-community/)
+- [SPICA Project](https://apis.io/schemas/university-of-lausanne/university-of-lausanne-project/)
 
-## Notes
+#### JSON Structure (2)
 
-All cataloged endpoints were probed live on 2026-06-03. SPICA and IRIS are public and documented; the IRIS items endpoint requires authentication and no OAI-PMH endpoint was found. Most institutional/student-information APIs sit behind the my.unil.ch authentication gateway and a Kong API gateway, with no public documentation. The `github.com/unil` org is unrelated to the university; `openscienceunil` is the relevant org but hosts coursework rather than API specifications. No endpoints were fabricated.
+Data models expressed in JSON Structure.
 
-## Maintainers
+- [University Of Lausanne Community Structure](https://apis.io/json-structure/university-of-lausanne/university-of-lausanne-community-structure/)
+- [University Of Lausanne Project Structure](https://apis.io/json-structure/university-of-lausanne/university-of-lausanne-project-structure/)
 
-- Kin Lane — kin@apievangelist.com
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [University Of Lausanne Context](https://apis.io/jsonld/university-of-lausanne/university-of-lausanne-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [University of Lausanne API Vocabulary](https://apis.io/vocabularies/university-of-lausanne/university-of-lausanne-vocabulary/)
+
+#### Examples (5)
+
+Example requests and responses.
+
+- [University Of Lausanne Datacite Client Example](https://apis.io/examples/university-of-lausanne/university-of-lausanne-datacite-client-example/)
+- [University Of Lausanne Listcollections Example](https://apis.io/examples/university-of-lausanne/university-of-lausanne-listCollections-example/)
+- [University Of Lausanne Listcommunities Example](https://apis.io/examples/university-of-lausanne/university-of-lausanne-listCommunities-example/)
+- [University Of Lausanne Queryprojects Example](https://apis.io/examples/university-of-lausanne/university-of-lausanne-queryProjects-example/)
+- [University Of Lausanne Searchobjects Example](https://apis.io/examples/university-of-lausanne/university-of-lausanne-searchObjects-example/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [IRIS Repository (DSpace REST API) Core API](https://apis.io/collections/university-of-lausanne/open-university-of-lausanne-core-api/)
+- [IRIS Repository (DSpace REST API) Core IRIS Repository (DSpace REST API) API](https://apis.io/collections/university-of-lausanne/open-university-of-lausanne-iris-repository-dspace-rest-api-api/)
+- [IRIS Repository (DSpace REST API) Core Projects API](https://apis.io/collections/university-of-lausanne/open-university-of-lausanne-projects-api/)
+- [IRIS Repository (DSpace REST API) Core Projects.json API](https://apis.io/collections/university-of-lausanne/open-university-of-lausanne-projects-json-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [University of Lausanne — jsonschema rules](https://apis.io/rules/university-of-lausanne/university-of-lausanne-jsonschema-spectral-rules/)
+- [University of Lausanne API Rules](https://apis.io/rules/university-of-lausanne/university-of-lausanne-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [University Of Lausanne Authentication](https://apis.io/security/university-of-lausanne/university-of-lausanne-authentication/)
+- [University Of Lausanne Domain Security](https://apis.io/security/university-of-lausanne/university-of-lausanne-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [University Of Lausanne Plans Pricing](https://apis.io/plans/university-of-lausanne/university-of-lausanne-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [University Of Lausanne Rate Limits](https://apis.io/rate-limits/university-of-lausanne/university-of-lausanne-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [University Of Lausanne Finops](https://apis.io/finops/university-of-lausanne/university-of-lausanne-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.unil.ch)
+- [Documentation](https://spica.unil.ch/home/api)
+- [API reference](https://api.unil.ch/iris/server/api)
+- [Support](https://www.unil.ch/ci/en/home/menuinst/catalogue-de-services/support-et-formation/help-desk.html)
+- [Blog](https://news.unil.ch/)
+- [Terms of service](https://www.unil.ch/unil/en/home/termes/conditions/informations-legales.html)
+- [Privacy policy](https://www.unil.ch/unil/en/home/termes/conditions/protection-des-donnees.html)
+- [GitHub](https://github.com/openscienceunil)
+
+## API Evangelist rating
+
+**Kin Score 45.0** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 82.1 |
+| Contract quality | 53.8 |
+| Contract governance | 35.6 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 39.5 |
+
+**Agent readiness 28.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 32.4** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/university-of-lausanne/](https://apis.io/providers/university-of-lausanne/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for University of Lausanne: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/university-of-lausanne/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
